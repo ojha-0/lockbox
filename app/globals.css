@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: 250 10% 98%;
+  --foreground: 210 14% 7%;
+  --card: 0 0% 100%;
+  --card-foreground: 210 14% 7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 14% 7%;
+  --primary: 79 56% 46%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 97%;
+  --secondary-foreground: 210 14% 7%;
+  --muted: 210 10% 87%;
+  --muted-foreground: 215 13% 43%;
+  --accent: 79 56% 46%;
+  --accent-foreground: 0 0% 100%;
+  --success: 142 71% 45%;
+  --success-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 210 10% 93%;
+  --input: 210 10% 93%;
+  --ring: 79 56% 46%;
+  --chart-1: 79 56% 46%;
+  --chart-2: 14 93% 54%;
+  --chart-3: 143 71% 45%;
+  --chart-4: 346 77% 50%;
+  --chart-5: 217 91% 60%;
+  --radius: 0.5rem;
+  --sidebar: 0 0% 98%;
+  --sidebar-foreground: 210 14% 7%;
+  --sidebar-primary: 79 56% 46%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 79 56% 46%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 210 10% 93%;
+  --sidebar-ring: 79 56% 46%;
+}
+
+.dark {
+  --background: 215 20% 10%;
+  --foreground: 0 0% 98%;
+  --card: 215 20% 15%;
+  --card-foreground: 0 0% 98%;
+  --popover: 215 20% 15%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 79 56% 46%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 215 20% 25%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 215 20% 30%;
+  --muted-foreground: 215 13% 60%;
+  --accent: 79 56% 46%;
+  --accent-foreground: 0 0% 100%;
+  --success: 142 71% 45%;
+  --success-foreground: 215 20% 10%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 215 20% 10%;
+  --border: 215 20% 25%;
+  --input: 215 20% 25%;
+  --ring: 79 56% 46%;
+  --chart-1: 79 56% 46%;
+  --chart-2: 14 93% 54%;
+  --chart-3: 143 71% 45%;
+  --chart-4: 346 77% 50%;
+  --chart-5: 217 91% 60%;
+  --sidebar: 215 20% 12%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 79 56% 46%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 79 56% 46%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 215 20% 25%;
+  --sidebar-ring: 79 56% 46%;
+}
+
+@theme inline {
+  --font-sans: var(--font-open-sans);
+  --font-mono: 'Menlo', 'Monaco', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
