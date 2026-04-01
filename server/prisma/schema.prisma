@@ -1,0 +1,165 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum ProfileStatus {
+  ACTIVE
+  DISABLED
+}
+
+enum VerificationStatus {
+  PENDING_VERIFICATION
+  VERIFIED
+  DECLINED
+}
+
+model User {
+  id             String        @id @default(cuid())
+  firstName      String
+  lastName       String?
+  email          String        @unique
+  phone          String?       @unique
+  passwordHash   String
+  role           Role          @default(USER)
+  profileStatus  ProfileStatus @default(ACTIVE)
+  profilePicture String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  lastLoginAt    DateTime?
+
+  documents     Document[]    @relation("UserDocuments")
+  reviewedDocs  Document[]    @relation("ReviewedByAdmin")
+  refreshTokens RefreshToken[]
+  actorLogs     ActivityLog[] @relation("ActorLogs")
+  targetLogs    ActivityLog[] @relation("TargetLogs")
+  passwordResets PasswordReset[]
+  sharesSent     DocumentShare[] @relation("SharesSent")
+  sharesReceived DocumentShare[] @relation("SharesReceived")
+  personalDetails UserPersonalDetails?
+  verifiedPersonalDetails UserPersonalDetails[] @relation("PersonalDetailsVerifier")
+}
+
+model UserPersonalDetails {
+  id                         String   @id @default(cuid())
+  userId                     String   @unique
+  gender                     String?
+  dateOfBirthAD              String?
+  dobBS                      String?
+  bloodGroup                 String?
+  birthAddress               String?
+  permanentAddress           String?
+  temporaryAddress           String?
+  citizenshipNumber          String?
+  citizenshipType            String?
+  citizenshipIssuingDistrict String?
+  citizenshipIssueDate       String?
+  citizenshipIssuingOfficer  String?
+  passportNumber             String?
+  nationality                String?
+  passportIssueDate          String?
+  passportExpiryDate         String?
+  nin                        String?
+  dlLicenseNumber            String?
+  dlCategory                 String?
+  dlIssueDate                String?
+  dlExpiryDate               String?
+  dlLicenseOffice            String?
+  panNumber                  String?
+  panRegisteredOffice        String?
+  verificationStatus         VerificationStatus @default(PENDING_VERIFICATION)
+  verifiedAt                 DateTime?
+  verifiedById               String?
+  rejectionReasonText        String?
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime @updatedAt
+
+  user       User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  verifiedBy User? @relation("PersonalDetailsVerifier", fields: [verifiedById], references: [id])
+}
+
+model Document {
+  id                   String             @id @default(cuid())
+  userId               String
+  fileName             String
+  originalName         String
+  mimeType             String
+  size                 Int
+  filePath             String
+  documentType         String?
+  documentLabel        String?
+  verificationStatus   VerificationStatus @default(PENDING_VERIFICATION)
+  uploadedAt           DateTime           @default(now())
+  reviewedAt           DateTime?
+  verifiedAt           DateTime?
+  reviewedById         String?
+  rejectionReasonCode  String?
+  rejectionReasonText  String?
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  user       User  @relation("UserDocuments", fields: [userId], references: [id], onDelete: Cascade)
+  reviewedBy User? @relation("ReviewedByAdmin", fields: [reviewedById], references: [id])
+  activityLogs ActivityLog[]
+}
+
+model ActivityLog {
+  id               String   @id @default(cuid())
+  actorUserId      String?
+  targetUserId     String?
+  targetDocumentId String?
+  action           String
+  entityType       String
+  description      String
+  metadata         Json?
+  createdAt        DateTime @default(now())
+
+  actor          User?     @relation("ActorLogs", fields: [actorUserId], references: [id])
+  targetUser     User?     @relation("TargetLogs", fields: [targetUserId], references: [id])
+  targetDocument Document? @relation(fields: [targetDocumentId], references: [id], onDelete: SetNull)
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  userId    String
+  tokenHash String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model DocumentShare {
+  id                     String    @id @default(cuid())
+  fromUserId             String
+  toUserId               String
+  documentType           String
+  maskedNumber           String
+  sharedAt               DateTime  @default(now())
+  fullAccessStatus       String    @default("NONE")
+  fullAccessRequestedAt  DateTime?
+  fullAccessRespondedAt  DateTime?
+
+  fromUser User @relation("SharesSent", fields: [fromUserId], references: [id], onDelete: Cascade)
+  toUser   User @relation("SharesReceived", fields: [toUserId], references: [id], onDelete: Cascade)
+}
+
+model PasswordReset {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
