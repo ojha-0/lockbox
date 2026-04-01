@@ -158,7 +158,7 @@ export default function CitizenRegisterPage() {
             <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
               <Fingerprint className="h-6 w-6 text-accent-foreground" />
             </div>
-            <span className="text-2xl font-semibold font-nunito">NagarikID</span>
+            <span className="text-2xl font-semibold font-nunito">Lockbox</span>
           </div>
           <div className="space-y-4">
             <h1 className="text-4xl font-light font-nunito leading-tight">
@@ -187,7 +187,7 @@ export default function CitizenRegisterPage() {
           <div className="lg:hidden mb-8 text-center">
             <div className="inline-flex items-center gap-2">
               <Fingerprint className="h-6 w-6 text-accent" />
-              <span className="text-lg font-semibold font-nunito">NagarikID</span>
+              <span className="text-lg font-semibold font-nunito">Lockbox</span>
             </div>
           </div>
 
@@ -308,3 +308,4 @@ export default function CitizenRegisterPage() {
     </div>
   )
 }
+

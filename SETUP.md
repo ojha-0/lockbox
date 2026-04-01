@@ -120,6 +120,7 @@ Create `.env` in project root (or update existing):
 
 ```env
 DATABASE_URL=postgresql://postgres.<project-ref>:<password>@<host>:6543/postgres
+LOCAL_DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres
 DB_SSL=true
 DB_SSL_REJECT_UNAUTHORIZED=false
 NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
@@ -128,6 +129,8 @@ SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 PORT=5000
 NODE_ENV=development
 ```
+
+If you want Supabase to be the primary backend when local Postgres is unavailable, keep `DATABASE_URL` pointed at your Supabase connection string and `LOCAL_DATABASE_URL` pointed at your local Postgres.
 
 `api/src/db/pool.ts` is configured to use SSL automatically for this setup.
 

@@ -5,7 +5,7 @@ import { Pool } from 'pg'
 const adminUsername = process.env.DEFAULT_ADMIN_USERNAME || 'admin'
 const adminPassword = process.env.DEFAULT_ADMIN_PASSWORD || 'admin'
 const adminNationalId = process.env.DEFAULT_ADMIN_NATIONAL_ID || '000000000001'
-const adminEmail = process.env.DEFAULT_ADMIN_EMAIL || 'admin@nagarikid.local'
+const adminEmail = process.env.DEFAULT_ADMIN_EMAIL || 'admin@Lockbox.local'
 
 async function run() {
   const databaseUrl = process.env.TARGET_DATABASE_URL || process.argv[2] || process.env.DATABASE_URL
@@ -84,3 +84,4 @@ run().catch((error) => {
   console.error('[admin-sync] Failed:', error.message)
   process.exit(1)
 })
+

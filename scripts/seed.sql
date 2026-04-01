@@ -32,7 +32,7 @@ ON CONFLICT DO NOTHING;
 INSERT INTO users (national_id, email, password_hash, role, is_active)
 VALUES (
   '000000000001',
-  'admin@nagarikid.local',
+  'admin@Lockbox.local',
   crypt('admin', gen_salt('bf')),
   'admin',
   true
@@ -42,3 +42,4 @@ ON CONFLICT (national_id) DO NOTHING;
 UPDATE users
 SET username = 'admin'
 WHERE role = 'admin' AND national_id = '000000000001';
+

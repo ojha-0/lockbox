@@ -47,7 +47,7 @@ export default function VerifierLayout({
                 <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform">
                   <Building2 className="h-5 w-5 text-white" />
                 </div>
-                <span className="text-lg font-semibold font-nunito text-foreground">NagarikID</span>
+                <span className="text-lg font-semibold font-nunito text-foreground">Lockbox</span>
               </Link>
               
               {/* Desktop Nav */}
@@ -159,3 +159,4 @@ export default function VerifierLayout({
     </div>
   )
 }
+

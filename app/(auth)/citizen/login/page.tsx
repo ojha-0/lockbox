@@ -57,7 +57,7 @@ export default function CitizenLoginPage() {
               <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center">
                 <Fingerprint className="h-6 w-6 text-accent-foreground" />
               </div>
-              <span className="text-2xl font-semibold font-nunito">NagarikID</span>
+              <span className="text-2xl font-semibold font-nunito">Lockbox</span>
             </div>
 
             <div className="space-y-4">
@@ -106,7 +106,7 @@ export default function CitizenLoginPage() {
               <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center">
                 <Fingerprint className="h-5 w-5 text-accent-foreground" />
               </div>
-              <span className="text-xl font-semibold font-nunito">NagarikID</span>
+              <span className="text-xl font-semibold font-nunito">Lockbox</span>
             </Link>
           </motion.div>
 
@@ -195,7 +195,7 @@ export default function CitizenLoginPage() {
 
           <motion.div variants={staggerItem} className="mt-10 pt-8 border-t border-border/30 space-y-4 text-center">
             <p className="text-muted-foreground">
-              New to NagarikID?{' '}
+              New to Lockbox?{' '}
               <Link href="/citizen/register" className="text-accent font-medium hover:underline">
                 Create account
               </Link>
@@ -211,3 +211,4 @@ export default function CitizenLoginPage() {
     </div>
   )
 }
+

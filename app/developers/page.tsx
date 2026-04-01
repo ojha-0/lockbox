@@ -44,7 +44,7 @@ export default function DevelopersPage() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="font-semibold text-foreground inline-flex items-center gap-2">
             <Building2 className="h-4 w-4 text-accent" />
-            NagarikID Verify API
+            Lockbox Verify API
           </Link>
           <div className="flex items-center gap-2">
             <Link href="/verifier/login" className="px-4 py-2 text-sm border rounded-lg border-border hover:border-accent/40">
@@ -67,7 +67,7 @@ export default function DevelopersPage() {
             Let any software verify identity through your API
           </h1>
           <p className="text-muted-foreground max-w-3xl text-lg leading-relaxed">
-            NagarikID acts as a central verification layer. External products call your API instead of building their own KYC stack. 
+            Lockbox acts as a central verification layer. External products call your API instead of building their own KYC stack. 
             Consent rules, document approval, and access auditing are enforced by the platform.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
@@ -133,3 +133,4 @@ export default function DevelopersPage() {
     </div>
   )
 }
+

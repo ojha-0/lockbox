@@ -21,7 +21,7 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'NagarikID - Digital Identity Verification',
+  title: 'Lockbox - Digital Identity Verification',
   description: 'Secure digital identity verification platform for Nepal with government-grade security',
   icons: {
     icon: [
@@ -89,3 +89,4 @@ export default function RootLayout({
     </html>
   )
 }
+

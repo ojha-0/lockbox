@@ -10,7 +10,7 @@ const ensureUsernameSchema = async (): Promise<void> => {
   const adminUsername = process.env.DEFAULT_ADMIN_USERNAME || 'admin'
   const adminPassword = process.env.DEFAULT_ADMIN_PASSWORD || 'admin'
   const adminNationalId = process.env.DEFAULT_ADMIN_NATIONAL_ID || '000000000001'
-  const adminEmail = process.env.DEFAULT_ADMIN_EMAIL || 'admin@nagarikid.local'
+  const adminEmail = process.env.DEFAULT_ADMIN_EMAIL || 'admin@Lockbox.local'
 
   await pool.query(`ALTER TABLE users ADD COLUMN IF NOT EXISTS username VARCHAR(50)`)
   await pool.query(
@@ -146,3 +146,4 @@ export const emailExists = async (email: string): Promise<boolean> => {
   )
   return result.rows[0].exists
 }
+

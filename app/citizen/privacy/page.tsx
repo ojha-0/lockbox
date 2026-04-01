@@ -280,7 +280,7 @@ export default function PrivacyPage() {
               <div>
                 <h3 className="text-lg font-semibold font-nunito text-foreground">Data Export</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Download a copy of all your NagarikID data
+                  Download a copy of all your Lockbox data
                 </p>
               </div>
             </div>
@@ -331,7 +331,7 @@ export default function PrivacyPage() {
               <div className="flex items-start gap-3">
                 <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
                 <p className="text-xs text-red-800 leading-relaxed">
-                  <span className="font-bold">Warning:</span> Deactivating or deleting your account will permanently remove all your information from NagarikID. This action cannot be recovered.
+                  <span className="font-bold">Warning:</span> Deactivating or deleting your account will permanently remove all your information from Lockbox. This action cannot be recovered.
                 </p>
               </div>
             </div>
@@ -341,3 +341,4 @@ export default function PrivacyPage() {
     </div>
   )
 }
+

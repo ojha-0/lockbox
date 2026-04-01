@@ -1,6 +1,6 @@
-# NagarikID Verify API (PERN + Next.js)
+# Lockbox Verify API (PERN + Next.js)
 
-NagarikID is positioned as an API-first identity verification platform, similar to Persona-style KYC workflows.
+Lockbox is positioned as an API-first identity verification platform, similar to Persona-style KYC workflows.
 External software products can integrate directly with the verification API instead of building in-house KYC infrastructure.
 
 Integration model:
@@ -246,3 +246,4 @@ DB_SYNC_INTERVAL_MS=15000
 Operational endpoints:
 - `GET /api/v1/health/db` → routing + outbox stats
 - `POST /api/v1/health/db/sync` → trigger immediate sync attempt
+

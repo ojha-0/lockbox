@@ -70,7 +70,7 @@ export default function Home() {
               <Fingerprint className="h-4 w-4 text-accent-foreground" />
             </div>
             <span className="text-lg font-semibold font-nunito text-foreground tracking-tight group-hover:text-accent transition-colors">
-              NagarikID
+              Lockbox
             </span>
           </Link>
           <div className="flex items-center gap-2">
@@ -212,7 +212,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.span variants={staggerItem} className="text-accent text-sm font-semibold uppercase tracking-wider">
-              Why NagarikID
+              Why Lockbox
             </motion.span>
             <motion.h2 variants={staggerItem} className="text-4xl md:text-5xl font-light font-nunito text-balance mt-4">
               The power is in your hands
@@ -355,7 +355,7 @@ export default function Home() {
               </motion.div>
               <div className="space-y-6 pl-2">
                 {[
-                  { step: '01', text: 'Connect backend to NagarikID API' },
+                  { step: '01', text: 'Connect backend to Lockbox API' },
                   { step: '02', text: 'Authenticate as verifier organization' },
                   { step: '03', text: 'Request policy-scoped verification data' },
                   { step: '04', text: 'Store auditable approval decisions' },
@@ -497,16 +497,17 @@ export default function Home() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent/80 flex items-center justify-center">
               <Fingerprint className="h-4 w-4 text-accent-foreground" />
             </div>
-            <span className="font-semibold font-nunito text-foreground">NagarikID</span>
+            <span className="font-semibold font-nunito text-foreground">Lockbox</span>
           </div>
           <p className="text-xs text-muted-foreground font-medium tracking-wider uppercase">
             Secure • Private • Transparent
           </p>
           <p className="text-xs text-muted-foreground">
-            © 2026 NagarikID. All rights reserved.
+            © 2026 Lockbox. All rights reserved.
           </p>
         </div>
       </footer>
     </div>
   )
 }
+

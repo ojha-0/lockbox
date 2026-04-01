@@ -31,11 +31,12 @@ const buildPool = (connectionString: string) => {
   return nextPool
 }
 
-const primaryUrl = (process.env.DATABASE_URL || '').trim()
+const supabaseUrl = (process.env.SUPABASE_DATABASE_URL || '').trim()
+const primaryUrl = supabaseUrl || (process.env.DATABASE_URL || '').trim()
 const localUrl = (process.env.LOCAL_DATABASE_URL || process.env.DATABASE_FALLBACK_URL || '').trim()
 
 if (!primaryUrl && !localUrl) {
-  throw new Error('No database URL configured. Set DATABASE_URL and/or LOCAL_DATABASE_URL.')
+  throw new Error('No database URL configured. Set DATABASE_URL, SUPABASE_DATABASE_URL, and/or LOCAL_DATABASE_URL.')
 }
 
 const primaryPool = primaryUrl ? buildPool(primaryUrl) : null

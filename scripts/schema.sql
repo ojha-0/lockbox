@@ -1,4 +1,4 @@
--- NagarikID Database Schema
+-- Lockbox Database Schema
 -- PostgreSQL with UUID primary keys and proper indexing
 
 -- Create extensions
@@ -148,3 +148,4 @@ CREATE INDEX idx_suspicious_activity_citizen_id ON suspicious_activity(citizen_i
 CREATE INDEX idx_suspicious_activity_verifier_id ON suspicious_activity(verifier_id);
 CREATE INDEX idx_suspicious_activity_threat_type ON suspicious_activity(threat_type);
 CREATE INDEX idx_suspicious_activity_created_at ON suspicious_activity(created_at DESC);
+

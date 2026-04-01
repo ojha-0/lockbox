@@ -84,7 +84,7 @@ export default function CitizenLayout({
                     <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center group-hover:scale-105 transition-transform">
                       <Fingerprint className="h-5 w-5 text-accent-foreground" />
                     </div>
-                    <span className="text-lg font-semibold font-nunito text-foreground">NagarikID</span>
+                    <span className="text-lg font-semibold font-nunito text-foreground">Lockbox</span>
                   </Link>
                   {isMobile && (
                     <button
@@ -185,3 +185,4 @@ export default function CitizenLayout({
     </div>
   )
 }
+

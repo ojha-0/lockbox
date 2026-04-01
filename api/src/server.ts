@@ -14,7 +14,7 @@ const startServer = async () => {
   }
 
   return app.listen(PORT, () => {
-    console.log(`[Server] NagarikID API running on http://localhost:${PORT}`)
+    console.log(`[Server] Lockbox API running on http://localhost:${PORT}`)
     console.log(`[Environment] ${process.env.NODE_ENV || 'development'}`)
   })
 }
@@ -59,3 +59,4 @@ process.on('SIGINT', () => {
 })
 
 export default server
+

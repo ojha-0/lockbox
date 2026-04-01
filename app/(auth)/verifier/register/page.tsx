@@ -76,7 +76,7 @@ export default function VerifierRegisterPage() {
         className="w-full max-w-sm"
       >
         <div className="mb-12 text-center">
-          <div className="text-lg font-medium font-nunito text-foreground mb-3">NagarikID</div>
+          <div className="text-lg font-medium font-nunito text-foreground mb-3">Lockbox</div>
           <h1 className="text-3xl font-light font-nunito text-balance">Register organization</h1>
         </div>
 
@@ -242,3 +242,4 @@ export default function VerifierRegisterPage() {
     </div>
   )
 }
+
