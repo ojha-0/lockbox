@@ -14,21 +14,21 @@ export default function UserTopbar() {
   };
 
   return (
-    <header className="h-14 flex items-center justify-between px-6 bg-white border-b border-gray-200 flex-shrink-0">
+    <header className="h-14 flex items-center justify-between px-6 bg-white border-b border-ink-100 flex-shrink-0">
       <div />
       <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
-            <User size={16} className="text-primary-600" />
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-full bg-ink-100 flex items-center justify-center">
+            <User size={16} className="text-ink-600" />
           </div>
           <div className="hidden sm:block">
-            <p className="text-sm font-medium text-gray-800 leading-none">{user?.name}</p>
-            <p className="text-xs text-gray-400">{user?.email}</p>
+            <p className="text-sm font-medium text-ink-800 leading-none">{user?.name}</p>
+            <p className="text-[11px] mono-label mt-1">{user?.email}</p>
           </div>
         </div>
         <button
           onClick={handleLogout}
-          className="p-2 rounded-lg hover:bg-gray-100 text-gray-500 hover:text-gray-700 transition-colors"
+          className="p-2 rounded-lg hover:bg-paper text-ink-300 hover:text-ink-800 transition-colors"
           title="Logout"
         >
           <LogOut size={18} />

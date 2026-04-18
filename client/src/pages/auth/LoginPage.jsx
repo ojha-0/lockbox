@@ -6,8 +6,9 @@ import api from '../../api/client';
 import { useAuth } from '../../context/AuthContext';
 import LockboxLogo from '../../components/common/LockboxLogo';
 
+// Vault Navy surface — flat, brand-aligned (no gradients per brand spec)
 const AUTH_BG = {
-  background: 'radial-gradient(ellipse at 50% 30%, #162a44 0%, #0c1a2e 55%, #07101e 100%)',
+  backgroundColor: '#0A1628',
 };
 
 export default function LoginPage() {
@@ -53,24 +54,24 @@ export default function LoginPage() {
       {/* Logo */}
       <div className="mb-8 text-center">
         <LockboxLogo variant="wordmark-white" height={36} />
-        <p className="text-gray-300 mt-4 text-base">Login to LockBox Account</p>
+        <p className="mono-label text-ink-200 mt-5">Keep it behind the O.</p>
       </div>
 
       {/* Card */}
-      <div className="bg-white rounded-2xl p-7 w-full max-w-sm shadow-2xl">
+      <div className="bg-white rounded-card p-7 w-full max-w-sm border border-ink-100">
         {/* Email / Phone toggle */}
-        <div className="flex rounded-lg border border-gray-200 mb-5 overflow-hidden">
+        <div className="flex rounded-lg border border-ink-100 mb-5 overflow-hidden">
           <button
             type="button"
             onClick={() => { setMode('email'); setForm(f => ({ ...f, identifier: '' })); setErrors({}); }}
-            className={`flex-1 py-2 text-sm font-medium transition-colors ${mode === 'email' ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-50'}`}
+            className={`flex-1 py-2 text-sm font-medium transition-colors ${mode === 'email' ? 'bg-ink-800 text-white' : 'text-ink-400 hover:bg-paper'}`}
           >
             <Mail size={13} className="inline mr-1.5" />Email
           </button>
           <button
             type="button"
             onClick={() => { setMode('phone'); setForm(f => ({ ...f, identifier: '' })); setErrors({}); }}
-            className={`flex-1 py-2 text-sm font-medium transition-colors ${mode === 'phone' ? 'bg-gray-900 text-white' : 'text-gray-500 hover:bg-gray-50'}`}
+            className={`flex-1 py-2 text-sm font-medium transition-colors ${mode === 'phone' ? 'bg-ink-800 text-white' : 'text-ink-400 hover:bg-paper'}`}
           >
             <Phone size={13} className="inline mr-1.5" />Phone
           </button>
@@ -81,7 +82,7 @@ export default function LoginPage() {
           <div>
             <label className="label">{mode === 'email' ? 'Email' : 'Phone Number'}</label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-300">
                 {mode === 'email' ? <Mail size={15} /> : <Phone size={15} />}
               </span>
               <input
@@ -99,10 +100,10 @@ export default function LoginPage() {
           <div>
             <div className="flex items-center justify-between mb-1.5">
               <label className="label mb-0">Password</label>
-              <Link to="/forgot-password" className="text-xs text-gray-500 hover:text-gray-800">Forgot Password?</Link>
+              <Link to="/forgot-password" className="text-xs text-ink-400 hover:text-ink-800">Forgot Password?</Link>
             </div>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-300">
                 <Lock size={15} />
               </span>
               <input
@@ -112,7 +113,7 @@ export default function LoginPage() {
                 value={form.password}
                 onChange={(e) => { setForm(f => ({ ...f, password: e.target.value })); setErrors(er => ({ ...er, password: '' })); }}
               />
-              <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600" onClick={() => setShowPass(v => !v)}>
+              <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-300 hover:text-ink-800" onClick={() => setShowPass(v => !v)}>
                 {showPass ? <EyeOff size={15} /> : <Eye size={15} />}
               </button>
             </div>
@@ -121,23 +122,23 @@ export default function LoginPage() {
 
           {/* Remember Me */}
           <label className="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} className="w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-800" />
-            <span className="text-sm text-gray-600">Remember Me</span>
+            <input type="checkbox" checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} className="w-4 h-4 rounded border-ink-200 text-ink-800 focus:ring-ink-800" />
+            <span className="text-sm text-ink-600">Remember Me</span>
           </label>
 
-          <button type="submit" className="btn-primary w-full py-3 rounded-xl" disabled={loading}>
+          <button type="submit" className="btn-primary w-full" disabled={loading}>
             {loading ? 'Logging in...' : 'Log In'}
           </button>
         </form>
 
-        <p className="text-center text-sm text-gray-500 mt-4">
+        <p className="text-center text-sm text-ink-400 mt-4">
           Do not have an account?{' '}
-          <Link to="/signup" className="text-gray-900 font-semibold hover:underline">Sign Up</Link>
+          <Link to="/signup" className="text-ink-800 font-semibold hover:underline">Sign Up</Link>
         </p>
       </div>
 
       {/* Footer */}
-      <div className="mt-6 flex items-center gap-5 text-xs text-gray-500">
+      <div className="mt-6 flex items-center gap-5 mono-label text-ink-300">
         <span>Terms</span><span>·</span><span>Privacy</span><span>·</span><span>Docs</span><span>·</span><span>Help</span>
       </div>
     </div>

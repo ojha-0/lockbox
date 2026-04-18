@@ -8,9 +8,8 @@ import { clearLegacyFormKeys } from '../../utils/formStorage';
 import LockboxLogo from '../../components/common/LockboxLogo';
 import OtpBoxes from '../../components/common/OtpBoxes';
 
-const AUTH_BG = {
-  background: 'radial-gradient(ellipse at 50% 30%, #162a44 0%, #0c1a2e 55%, #07101e 100%)',
-};
+// Vault Navy — flat brand surface
+const AUTH_BG = { backgroundColor: '#0A1628' };
 
 const features = [
   {
@@ -94,7 +93,7 @@ export default function SignupPage() {
           <LockboxLogo variant="wordmark-white" height={32} />
           <div className="mt-10">
             <h2 className="text-2xl font-bold text-white">Setup your account</h2>
-            <p className="text-gray-400 mt-1.5 text-sm">Secure Document Storage with reusable KYC</p>
+            <p className="text-ink-300 mt-1.5 text-sm">Secure Document Storage with reusable KYC</p>
           </div>
           <div className="mt-10 space-y-7">
             {features.map(({ icon: Icon, title, desc }) => (
@@ -104,21 +103,21 @@ export default function SignupPage() {
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm">{title}</p>
-                  <p className="text-gray-400 text-xs mt-1 leading-relaxed">{desc}</p>
+                  <p className="text-ink-300 text-xs mt-1 leading-relaxed">{desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="flex items-center gap-4 text-xs text-gray-600">
+        <div className="flex items-center gap-4 text-xs text-ink-600">
           <span>Terms</span><span>·</span><span>Privacy</span><span>·</span><span>Docs</span><span>·</span><span>Help</span>
         </div>
       </div>
 
       {/* ── Right panel ── */}
       <div className="flex-1 flex items-center justify-center p-8">
-        <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-2xl">
-          <h2 className="text-lg font-bold text-gray-800 text-center border-b border-gray-100 pb-4 mb-5">
+        <div className="bg-white rounded-card p-8 w-full max-w-md border border-ink-100">
+          <h2 className="text-lg font-bold text-ink-800 text-center border-b border-ink-100 pb-4 mb-5">
             Create your account
           </h2>
 
@@ -128,15 +127,15 @@ export default function SignupPage() {
               <div>
                 <label className="label">First Name</label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><User size={14} /></span>
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-300"><User size={14} /></span>
                   <input type="text" className={`input pl-8 ${errors.firstName ? 'input-error' : ''}`} placeholder="First Name" {...field('firstName')} />
                 </div>
-                {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
+                {errors.firstName && <p className="text-[color:#FF383C] text-xs mt-1">{errors.firstName}</p>}
               </div>
               <div>
                 <label className="label">Last Name</label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><User size={14} /></span>
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-300"><User size={14} /></span>
                   <input type="text" className="input pl-8" placeholder="Last Name" {...field('lastName')} />
                 </div>
               </div>
@@ -146,18 +145,18 @@ export default function SignupPage() {
             <div>
               <label className="label">Phone Number</label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><Phone size={14} /></span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-300"><Phone size={14} /></span>
                 <input type="tel" className="input pl-8" placeholder="+977 98XXXXXXXX" {...field('phone')} />
               </div>
               {phoneValid && (
-                <div className="mt-2 p-3 rounded-lg bg-gray-50 border border-gray-200">
-                  <p className="text-xs text-gray-600 mb-2 flex items-center justify-between">
+                <div className="mt-2 p-3 rounded-lg bg-paper border border-ink-100">
+                  <p className="text-xs text-ink-600 mb-2 flex items-center justify-between">
                     <span>Enter the 4-digit code sent to your phone</span>
-                    {phoneOtpValid && <span className="text-green-600 font-semibold flex items-center gap-1"><ShieldCheck size={12} />Verified</span>}
+                    {phoneOtpValid && <span className="text-[color:#1C9139] font-semibold flex items-center gap-1"><ShieldCheck size={12} />Verified</span>}
                   </p>
                   <OtpBoxes value={phoneOtp} onChange={setPhoneOtp} error={phoneOtp.length === 4 && !phoneOtpValid} />
                   {phoneOtp.length === 4 && !phoneOtpValid && (
-                    <p className="text-red-500 text-xs mt-1">Invalid OTP. Hint: 1234</p>
+                    <p className="text-[color:#FF383C] text-xs mt-1">Invalid OTP. Hint: 1234</p>
                   )}
                 </div>
               )}
@@ -167,19 +166,19 @@ export default function SignupPage() {
             <div>
               <label className="label">Email</label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><Mail size={14} /></span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-300"><Mail size={14} /></span>
                 <input type="email" className={`input pl-8 ${errors.email ? 'input-error' : ''}`} placeholder="Email" {...field('email')} />
               </div>
-              {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+              {errors.email && <p className="text-[color:#FF383C] text-xs mt-1">{errors.email}</p>}
               {emailValid && (
-                <div className="mt-2 p-3 rounded-lg bg-gray-50 border border-gray-200">
-                  <p className="text-xs text-gray-600 mb-2 flex items-center justify-between">
+                <div className="mt-2 p-3 rounded-lg bg-paper border border-ink-100">
+                  <p className="text-xs text-ink-600 mb-2 flex items-center justify-between">
                     <span>Enter the 4-digit code sent to your email</span>
-                    {emailOtpValid && <span className="text-green-600 font-semibold flex items-center gap-1"><ShieldCheck size={12} />Verified</span>}
+                    {emailOtpValid && <span className="text-[color:#1C9139] font-semibold flex items-center gap-1"><ShieldCheck size={12} />Verified</span>}
                   </p>
                   <OtpBoxes value={emailOtp} onChange={setEmailOtp} error={emailOtp.length === 4 && !emailOtpValid} />
                   {emailOtp.length === 4 && !emailOtpValid && (
-                    <p className="text-red-500 text-xs mt-1">Invalid OTP. Hint: 1234</p>
+                    <p className="text-[color:#FF383C] text-xs mt-1">Invalid OTP. Hint: 1234</p>
                   )}
                 </div>
               )}
@@ -189,33 +188,33 @@ export default function SignupPage() {
             <div>
               <label className="label">Password</label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"><Lock size={14} /></span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-300"><Lock size={14} /></span>
                 <input
                   type={showPass ? 'text' : 'password'}
                   className={`input pl-8 pr-10 ${errors.password ? 'input-error' : ''}`}
                   placeholder="Password"
                   {...field('password')}
                 />
-                <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600" onClick={() => setShowPass(v => !v)}>
+                <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-300 hover:text-ink-600" onClick={() => setShowPass(v => !v)}>
                   {showPass ? <EyeOff size={15} /> : <Eye size={15} />}
                 </button>
               </div>
-              {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
-              <p className="text-xs text-gray-400 mt-1">Minimum length is 8 characters.</p>
+              {errors.password && <p className="text-[color:#FF383C] text-xs mt-1">{errors.password}</p>}
+              <p className="text-xs text-ink-300 mt-1">Minimum length is 8 characters.</p>
             </div>
 
-            <button type="submit" className="btn-primary w-full py-3 rounded-xl" disabled={loading}>
+            <button type="submit" className="btn-primary w-full" disabled={loading}>
               {loading ? 'Creating account...' : 'Signup'}
             </button>
           </form>
 
-          <p className="text-center text-xs text-gray-400 mt-3">
+          <p className="text-center text-xs text-ink-300 mt-3">
             By creating an account, you agree to the{' '}
-            <span className="text-gray-700 underline cursor-pointer">Terms of Service</span>.
+            <span className="text-ink-600 underline cursor-pointer">Terms of Service</span>.
           </p>
-          <p className="text-center text-sm text-gray-500 mt-3">
+          <p className="text-center text-sm text-ink-400 mt-3">
             Already have an account?{' '}
-            <Link to="/login" className="text-gray-900 font-semibold hover:underline">Login</Link>
+            <Link to="/login" className="text-ink-800 font-semibold hover:underline">Login</Link>
           </p>
         </div>
       </div>

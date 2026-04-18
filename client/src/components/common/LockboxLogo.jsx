@@ -25,7 +25,8 @@ const WORDMARK_PATHS = [
 export default function LockboxLogo({ variant = 'wordmark-white', className = '', height = 32 }) {
   const isWhite = variant.includes('white');
   const isIcon = variant.includes('icon');
-  const fill = isWhite ? '#ffffff' : '#111111';
+  // Brand: white on dark surfaces; Vault Navy (#0A1628) on light surfaces
+  const fill = isWhite ? '#ffffff' : '#0A1628';
 
   if (isIcon) {
     return (

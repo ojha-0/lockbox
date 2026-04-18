@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LockBox — Brand Guidelines</title>
+<link rel="icon" href="assets/favicon-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/shared.css">
+<link rel="stylesheet" href="styles/v1.css">
+<link rel="stylesheet" href="styles/v2.css">
+</head>
+<body>
+
+<nav class="version-bar" aria-label="Version switcher">
+  <button data-v="v1" class="active">V1 · Spec Sheet</button>
+  <button data-v="v2">V2 · Institutional</button>
+</nav>
+
+<!-- ================= VERSION 1 — SPEC SHEET ================= -->
+<main class="version active" id="v1">
+
+  <!-- HERO -->
+  <section class="v1-hero">
+    <aside class="v1-hero-meta">
+      <div>LockBox · Brand Guidelines</div>
+      <div style="margin-top:4px; color: var(--ink-500);">Document · v1.0 · 2026</div>
+      <dl>
+        <div><dt>DOCUMENT</dt><dd>LBX-BRAND-001</dd></div>
+        <div><dt>STATUS</dt><dd style="color:var(--ok-soft);">● ACTIVE</dd></div>
+        <div><dt>REVISION</dt><dd>1.0.0 / 04.18.2026</dd></div>
+        <div><dt>OWNER</dt><dd>Brand Systems</dd></div>
+        <div><dt>SCOPE</dt><dd>Identity, UI, Collateral</dd></div>
+      </dl>
+    </aside>
+    <div class="v1-hero-body">
+      <div class="v1-hero-tag"><span class="dot"></span>Brand System · Release 1.0</div>
+      <h1>Keep it<br>behind<br>the <span class="glyph">O</span>.</h1>
+      <p class="v1-hero-sub">LockBox is a private vault for personal documents. Fill your KYC once, share it masked or whole — on demand, under lock. These are the rules for how the brand looks, reads and behaves.</p>
+
+      <div class="v1-hero-stats">
+        <div><div class="num">01</div><div class="lbl">Logo &amp; Mark</div></div>
+        <div><div class="num">08</div><div class="lbl">Core Colors</div></div>
+        <div><div class="num">03</div><div class="lbl">Typefaces</div></div>
+        <div><div class="num">12</div><div class="lbl">UI Primitives</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 01 — LOGO -->
+  <section class="v1-section" id="logo">
+    <div class="v1-section-head">
+      <div>
+        <div class="v1-section-num">§01<span class="slash">/</span>06 · Identity</div>
+        <div style="margin-top:12px; font-family: var(--font-spec); font-size:11px; color:var(--ink-500); letter-spacing: 0.1em; text-transform: uppercase;">Wordmark / Favicon / Clearspace / Misuse</div>
+      </div>
+      <div>
+        <h2 class="v1-section-title">Logo.</h2>
+        <p class="v1-section-lead">The LockBox wordmark is drawn in a tight geometric sans. The <span style="color:var(--white)">O</span> is intentionally shaped like a keyhole — the only piece of the brand that must never be redrawn, stretched, or recolored.</p>
+      </div>
+    </div>
+
+    <!-- Primary lockup row -->
+    <h3 style="font-family: var(--font-spec); font-size:11px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin-bottom: 16px;">1.1 · Primary Lockup</h3>
+    <div class="logo-grid">
+      <div class="logo-card">
+        <span class="tag">ON INK-800 · PRIMARY</span>
+        <img src="assets/logo-white.png" class="wordmark" alt="LockBox wordmark white">
+      </div>
+      <div class="logo-card logo-card--light">
+        <span class="tag">ON PAPER · DARK</span>
+        <img src="assets/logo-dark.png" class="wordmark" alt="LockBox wordmark dark">
+      </div>
+    </div>
+    <div class="logo-grid" style="margin-top: 24px;">
+      <div class="logo-card">
+        <span class="tag">MARK · WHITE</span>
+        <img src="assets/favicon-white.png" class="mark" alt="LockBox mark white">
+      </div>
+      <div class="coord-card">
+        <div style="font-family: var(--font-spec); font-size:10px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin-bottom: 16px; display:flex; justify-content: space-between;">
+          <span>1.2 · Construction Grid</span>
+          <span>8×8</span>
+        </div>
+        <div class="coord-grid">
+          <span class="coord-label cl-top">y = 0</span>
+          <span class="coord-label cl-right">x = 1.0</span>
+          <span class="coord-label cl-bot">1:1 ratio</span>
+          <img src="assets/favicon-dark.png" alt="LockBox mark construction">
+        </div>
+      </div>
+    </div>
+
+    <!-- Clearspace -->
+    <h3 style="font-family: var(--font-spec); font-size:11px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin: 72px 0 16px;">1.3 · Clearspace &amp; Minimum Size</h3>
+    <div class="clearspace">
+      <div class="clearspace-viz">
+        <div class="frame">
+          <span class="x-mark tl">X</span>
+          <span class="x-mark br">X</span>
+          <div class="inner">
+            <img src="assets/logo-white.png" alt="LockBox wordmark clearspace">
+          </div>
+        </div>
+      </div>
+      <div class="clearspace-viz">
+        <div style="display:flex; flex-direction:column; gap:32px; align-items: flex-start;">
+          <div style="display:flex; align-items:center; gap: 16px;">
+            <img src="assets/logo-white.png" style="width:200px;" alt="min size digital">
+            <span style="font-family: var(--font-spec); font-size: 10px; color: var(--ink-400); letter-spacing: 0.1em; text-transform: uppercase;">160 px<br>min, digital</span>
+          </div>
+          <div style="display:flex; align-items:center; gap: 16px;">
+            <img src="assets/logo-white.png" style="width:120px;" alt="min size print">
+            <span style="font-family: var(--font-spec); font-size: 10px; color: var(--ink-400); letter-spacing: 0.1em; text-transform: uppercase;">24 mm<br>min, print</span>
+          </div>
+          <div style="display:flex; align-items:center; gap: 16px;">
+            <img src="assets/favicon-white.png" style="width:32px;" alt="mark min">
+            <span style="font-family: var(--font-spec); font-size: 10px; color: var(--ink-400); letter-spacing: 0.1em; text-transform: uppercase;">32 px<br>mark min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="font-family: var(--font-spec); font-size: 11px; color: var(--ink-300); margin-top: 16px; line-height: 1.6;">Clearspace = height of the <span style="color:var(--white)">O</span>. Maintain on all four sides. Never intrude.</p>
+
+    <!-- Misuse -->
+    <h3 style="font-family: var(--font-spec); font-size:11px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin: 72px 0 16px;">1.4 · Misuse</h3>
+    <div class="misuse">
+      <div class="misuse-cell stretched"><img src="assets/logo-white.png" alt="don't stretch"><span class="cap">1.4.1 Stretch</span></div>
+      <div class="misuse-cell rotated"><img src="assets/logo-white.png" alt="don't rotate"><span class="cap">1.4.2 Rotate</span></div>
+      <div class="misuse-cell colored"><img src="assets/logo-dark.png" alt="don't recolor"><span class="cap">1.4.3 Recolor</span></div>
+      <div class="misuse-cell outlined"><img src="assets/logo-white.png" alt="don't outline"><span class="cap">1.4.4 Outline</span></div>
+      <div class="misuse-cell shadowed"><img src="assets/logo-white.png" alt="don't glow"><span class="cap">1.4.5 Glow / Shadow</span></div>
+      <div class="misuse-cell small"><img src="assets/logo-white.png" alt="don't use too small"><span class="cap">1.4.6 Sub-Minimum</span></div>
+      <div class="misuse-cell busy"><img src="assets/logo-white.png" alt="don't on busy bg"><span class="cap">1.4.7 Busy BG</span></div>
+      <div class="misuse-cell cropped"><img src="assets/logo-white.png" alt="don't crop"><span class="cap">1.4.8 Crop</span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 02 — COLOR -->
+  <section class="v1-section" id="color">
+    <div class="v1-section-head">
+      <div>
+        <div class="v1-section-num">§02<span class="slash">/</span>06 · Palette</div>
+        <div style="margin-top:12px; font-family: var(--font-spec); font-size:11px; color:var(--ink-500); letter-spacing: 0.1em; text-transform: uppercase;">Primary / Secondary / Status / Accessibility</div>
+      </div>
+      <div>
+        <h2 class="v1-section-title">Color.</h2>
+        <p class="v1-section-lead">The palette is a single deep navy and the blue-grays that sit beneath it. It should feel like a vault — heavy, quiet, authoritative. Color draws attention only where it matters: status, action, warnings.</p>
+      </div>
+    </div>
+
+    <!-- Primary -->
+    <h3 style="font-family: var(--font-spec); font-size:11px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin-bottom: 16px;">2.1 · Primary</h3>
+    <div class="color-primary">
+      <div class="color-hero">
+        <div>
+          <div style="font-family: var(--font-spec); font-size:11px; letter-spacing: 0.12em; color: var(--ink-400); text-transform: uppercase;">Ink · 800</div>
+          <h4 style="margin-top: 12px;">Vault Navy</h4>
+        </div>
+        <div class="meta">
+          <div><span class="lbl">HEX</span> #0A1628</div>
+          <div><span class="lbl">RGB</span> 10 · 22 · 40</div>
+          <div><span class="lbl">HSL</span> 216° 60% 10%</div>
+          <div><span class="lbl">CMYK</span> 75 · 45 · 0 · 84</div>
+          <div><span class="lbl">PMS</span> 5395 C</div>
+        </div>
+        <div class="big-hex">0A1628</div>
+      </div>
+      <div class="color-sec">
+        <div>
+          <div style="font-family: var(--font-spec); font-size:10px; letter-spacing: 0.12em; color: rgba(255,255,255,0.6); text-transform: uppercase;">Ink · 600</div>
+          <h5 style="margin-top: 8px;">Deep<br>Teal</h5>
+        </div>
+        <div class="hex">#1B3C53<br>27·60·83</div>
+      </div>
+      <div class="color-sec color-sec--alt">
+        <div>
+          <div style="font-family: var(--font-spec); font-size:10px; letter-spacing: 0.12em; color: rgba(10,22,40,0.6); text-transform: uppercase;">Ink · 400</div>
+          <h5 style="margin-top: 8px;">Slate<br>Blue</h5>
+        </div>
+        <div class="hex">#456882<br>69·104·130</div>
+      </div>
+    </div>
+
+    <!-- Neutral scale -->
+    <h3 style="font-family: var(--font-spec); font-size:11px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin: 48px 0 16px;">2.2 · Neutral Scale</h3>
+    <div class="color-row">
+      <div style="background:#000C1F; color:#8996A9;"><div class="name">Ink 900</div><div class="hex">#000C1F</div></div>
+      <div style="background:#0A1628; color:#8996A9;"><div class="name">Ink 800</div><div class="hex">#0A1628</div></div>
+      <div style="background:#1B3C53; color:#DAE4F1;"><div class="name">Ink 600</div><div class="hex">#1B3C53</div></div>
+      <div style="background:#456882; color:#fff;"><div class="name">Ink 400</div><div class="hex">#456882</div></div>
+      <div style="background:#8996A9; color:#0A1628;"><div class="name">Ink 300</div><div class="hex">#8996A9</div></div>
+      <div style="background:#DAE4F1; color:#0A1628;"><div class="name">Ink 200</div><div class="hex">#DAE4F1</div></div>
+    </div>
+
+    <!-- Status -->
+    <h3 style="font-family: var(--font-spec); font-size:11px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin: 48px 0 16px;">2.3 · Status / Signal</h3>
+    <div class="color-row status-row" style="grid-template-columns: repeat(3, 1fr);">
+      <div style="background:#1C9139; color:#fff;"><div class="name">Approved · Ok</div><div class="hex">#1C9139 · 28·145·57</div></div>
+      <div style="background:#FFF36E; color:#0A1628;"><div class="name">Pending · Warn</div><div class="hex">#FFF36E · 255·243·110</div></div>
+      <div style="background:#FF383C; color:#fff;"><div class="name">Rejected · Err</div><div class="hex">#FF383C · 255·56·60</div></div>
+    </div>
+
+    <!-- Accessibility table -->
+    <h3 style="font-family: var(--font-spec); font-size:11px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin: 48px 0 16px;">2.4 · Pairing &amp; Accessibility</h3>
+    <table class="spec-table">
+      <thead>
+        <tr><th>Foreground</th><th>Background</th><th>Contrast</th><th>WCAG AA</th><th>WCAG AAA</th><th>Use</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="swatch" style="background:#fff;"></span>White</td><td><span class="swatch" style="background:#0A1628;"></span>Ink 800</td><td>17.4 : 1</td><td style="color:var(--ok-soft)">● Pass</td><td style="color:var(--ok-soft)">● Pass</td><td>Body text, headlines</td></tr>
+        <tr><td><span class="swatch" style="background:#DAE4F1;"></span>Ink 200</td><td><span class="swatch" style="background:#0A1628;"></span>Ink 800</td><td>14.1 : 1</td><td style="color:var(--ok-soft)">● Pass</td><td style="color:var(--ok-soft)">● Pass</td><td>Secondary text</td></tr>
+        <tr><td><span class="swatch" style="background:#8996A9;"></span>Ink 300</td><td><span class="swatch" style="background:#0A1628;"></span>Ink 800</td><td>6.2 : 1</td><td style="color:var(--ok-soft)">● Pass</td><td style="color:var(--warn)">○ Large</td><td>Captions, meta</td></tr>
+        <tr><td><span class="swatch" style="background:#0A1628;"></span>Ink 800</td><td><span class="swatch" style="background:#fff;"></span>Paper</td><td>17.4 : 1</td><td style="color:var(--ok-soft)">● Pass</td><td style="color:var(--ok-soft)">● Pass</td><td>Light surface text</td></tr>
+        <tr><td><span class="swatch" style="background:#456882;"></span>Ink 400</td><td><span class="swatch" style="background:#fff;"></span>Paper</td><td>4.8 : 1</td><td style="color:var(--ok-soft)">● Pass</td><td style="color:var(--err)">● Fail</td><td>Links on light</td></tr>
+        <tr><td><span class="swatch" style="background:#1C9139;"></span>OK</td><td><span class="swatch" style="background:#fff;"></span>Paper</td><td>4.5 : 1</td><td style="color:var(--ok-soft)">● Pass</td><td style="color:var(--err)">● Fail</td><td>Success states</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 03 — TYPOGRAPHY -->
+  <section class="v1-section" id="type">
+    <div class="v1-section-head">
+      <div>
+        <div class="v1-section-num">§03<span class="slash">/</span>06 · Typography</div>
+        <div style="margin-top:12px; font-family: var(--font-spec); font-size:11px; color:var(--ink-500); letter-spacing: 0.1em; text-transform: uppercase;">Neue Montreal · Inter · Geist Mono</div>
+      </div>
+      <div>
+        <h2 class="v1-section-title">Typography.</h2>
+        <p class="v1-section-lead">Three voices. <strong style="color:var(--white)">Neue Montreal</strong> carries all headlines and product UI. <strong style="color:var(--white)">Inter</strong> handles dense body. <strong style="color:var(--white)">Geist Mono</strong> is reserved for labels, spec callouts, and identifiers.</p>
+      </div>
+    </div>
+
+    <!-- Specimen cards -->
+    <div class="font-specimen">
+      <div class="specimen-card">
+        <div class="name">3.1 Display · Neue Montreal</div>
+        <div class="big" style="font-family: var(--font-display); font-size: 180px; font-weight: 800;">Aa</div>
+        <div class="weights">
+          <div><span class="w-label">REG 400</span>ABCDEFG abcdefg 0123456789</div>
+          <div style="font-weight:500;"><span class="w-label">MED 500</span>ABCDEFG abcdefg 0123456789</div>
+          <div style="font-weight:700;"><span class="w-label">BLD 700</span>ABCDEFG abcdefg 0123456789</div>
+          <div style="font-weight:800;"><span class="w-label">XBL 800</span>ABCDEFG abcdefg 0123456789</div>
+        </div>
+      </div>
+      <div class="specimen-card">
+        <div class="name">3.2 Body · Inter</div>
+        <div class="big" style="font-family: var(--font-body); font-size: 180px; font-weight: 500;">Aa</div>
+        <div class="weights" style="font-family: var(--font-body);">
+          <div><span class="w-label">REG 400</span>ABCDEFG abcdefg 0123456789</div>
+          <div style="font-weight:500;"><span class="w-label">MED 500</span>ABCDEFG abcdefg 0123456789</div>
+          <div style="font-weight:600;"><span class="w-label">SEM 600</span>ABCDEFG abcdefg 0123456789</div>
+          <div style="font-weight:700;"><span class="w-label">BLD 700</span>ABCDEFG abcdefg 0123456789</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scale -->
+    <h3 style="font-family: var(--font-spec); font-size:11px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin-bottom: 16px;">3.3 · Type Scale</h3>
+    <div>
+      <div class="type-row">
+        <div class="type-meta">D-01<br><span class="val">Display</span></div>
+        <div class="type-sample t-display">Lock everything.</div>
+        <div class="type-specs">
+          <div class="row"><span class="k">FAMILY</span>Neue Montreal</div>
+          <div class="row"><span class="k">WEIGHT</span>800 · XBold</div>
+          <div class="row"><span class="k">SIZE</span>72 / 68</div>
+          <div class="row"><span class="k">TRACK</span>-2%</div>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">H-01<br><span class="val">Heading 1</span></div>
+        <div class="type-sample t-h1">Document, once.</div>
+        <div class="type-specs">
+          <div class="row"><span class="k">FAMILY</span>Neue Montreal</div>
+          <div class="row"><span class="k">WEIGHT</span>700 · Bold</div>
+          <div class="row"><span class="k">SIZE</span>48 / 52</div>
+          <div class="row"><span class="k">TRACK</span>-3%</div>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">H-02<br><span class="val">Heading 2</span></div>
+        <div class="type-sample t-h2">Share it, safely.</div>
+        <div class="type-specs">
+          <div class="row"><span class="k">FAMILY</span>Neue Montreal</div>
+          <div class="row"><span class="k">WEIGHT</span>600</div>
+          <div class="row"><span class="k">SIZE</span>32 / 38</div>
+          <div class="row"><span class="k">TRACK</span>-2%</div>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">H-03<br><span class="val">Heading 3</span></div>
+        <div class="type-sample t-h3">Passport · Uploaded Feb 01</div>
+        <div class="type-specs">
+          <div class="row"><span class="k">FAMILY</span>Neue Montreal</div>
+          <div class="row"><span class="k">WEIGHT</span>600</div>
+          <div class="row"><span class="k">SIZE</span>22 / 26</div>
+          <div class="row"><span class="k">TRACK</span>-1%</div>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">B-01<br><span class="val">Body</span></div>
+        <div class="type-sample t-body" style="color:var(--ink-200); font-size:16px; max-width: 560px;">Fill your KYC once. Share it masked — or whole — only when you say so. LockBox keeps your documents verifiable and your privacy in your hands.</div>
+        <div class="type-specs">
+          <div class="row"><span class="k">FAMILY</span>Inter</div>
+          <div class="row"><span class="k">WEIGHT</span>400 / 500</div>
+          <div class="row"><span class="k">SIZE</span>16 / 24</div>
+          <div class="row"><span class="k">TRACK</span>0</div>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">L-01<br><span class="val">Label / Mono</span></div>
+        <div class="type-sample t-label" style="color: var(--ink-300);">LBX-2026-04-18 · VERIFIED · NPR 977</div>
+        <div class="type-specs">
+          <div class="row"><span class="k">FAMILY</span>Geist Mono</div>
+          <div class="row"><span class="k">WEIGHT</span>500</div>
+          <div class="row"><span class="k">SIZE</span>11 / 16</div>
+          <div class="row"><span class="k">TRACK</span>+12%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — ICONS -->
+  <section class="v1-section" id="icons">
+    <div class="v1-section-head">
+      <div>
+        <div class="v1-section-num">§04<span class="slash">/</span>06 · Iconography</div>
+        <div style="margin-top:12px; font-family: var(--font-spec); font-size:11px; color:var(--ink-500); letter-spacing: 0.1em; text-transform: uppercase;">24×24 · 1.5 stroke · rounded</div>
+      </div>
+      <div>
+        <h2 class="v1-section-title">Icons.</h2>
+        <p class="v1-section-lead">Drawn on a 24×24 grid with a 1.5 px stroke and rounded caps. Icons are always monochrome — they inherit text color. Never fill shapes that should read as outlines.</p>
+      </div>
+    </div>
+
+    <div class="icon-spec" style="margin-bottom: 40px;">
+      <div class="icon-spec-card">
+        <div class="icon-spec-head">4.1 · Construction — 24×24 grid</div>
+        <div class="icon-bigviz">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+      </div>
+      <div class="icon-spec-card">
+        <div class="icon-spec-head">4.2 · Stroke spec</div>
+        <table class="spec-table">
+          <tbody>
+            <tr><td>Grid</td><td>24 × 24</td></tr>
+            <tr><td>Stroke</td><td>1.5 px</td></tr>
+            <tr><td>Caps / Joins</td><td>Round</td></tr>
+            <tr><td>Corner radius</td><td>2 px</td></tr>
+            <tr><td>Optical padding</td><td>2 px (top/bot)</td></tr>
+            <tr><td>Color</td><td>inherit (currentColor)</td></tr>
+            <tr><td>Export</td><td>SVG · no fill</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3 style="font-family: var(--font-spec); font-size:11px; letter-spacing:0.12em; text-transform: uppercase; color: var(--ink-400); margin-bottom: 16px;">4.3 · Library</h3>
+    <div class="icon-grid">
+      <div class="icon-cell"><span class="coord">01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="nm">lock</span></div>
+      <div class="icon-cell"><span class="coord">02</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg><span class="nm">eye</span></div>
+      <div class="icon-cell"><span class="coord">03</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg><span class="nm">eye-off</span></div>
+      <div class="icon-cell"><span class="coord">04</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><span class="nm">upload</span></div>
+      <div class="icon-cell"><span class="coord">05</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg><span class="nm">document</span></div>
+      <div class="icon-cell"><span class="coord">06</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span class="nm">share</span></div>
+      <div class="icon-cell"><span class="coord">07</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="nm">globe</span></div>
+      <div class="icon-cell"><span class="coord">08</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nm">phone</span></div>
+      <div class="icon-cell"><span class="coord">09</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nm">search</span></div>
+      <div class="icon-cell"><span class="coord">10</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span class="nm">dashboard</span></div>
+      <div class="icon-cell"><span class="coord">11</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span class="nm">settings</span></div>
+      <div class="icon-cell"><span class="coord">12</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span class="nm">check</span></div>
+      <div class="icon-cell"><span class="coord">13</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="nm">pending</span></div>
+      <div class="icon-cell"><span class="coord">14</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span class="nm">close</span></div>
+      <div class="icon-cell"><span class="coord">15</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg><span class="nm">chevron-dn</span></div>
+      <div class="icon-cell"><span class="coord">16</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span class="nm">verified</span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — UI COMPONENTS -->
+  <section class="v1-section" id="ui">
+    <div class="v1-section-head">
+      <div>
+        <div class="v1-section-num">§05<span class="slash">/</span>06 · Interface</div>
+        <div style="margin-top:12px; font-family: var(--font-spec); font-size:11px; color:var(--ink-500); letter-spacing: 0.1em; text-transform: uppercase;">Buttons · Inputs · Badges · Cards</div>
+      </div>
+      <div>
+        <h2 class="v1-section-title">UI.</h2>
+        <p class="v1-section-lead">Primitives used across the product surface. All radii are 8 px (buttons/inputs), 10–12 px (cards), 999 px (badges). Default action is always dark ink on light — we commit to a single primary button.</p>
+      </div>
+    </div>
+
+    <div class="ui-grid">
+
+      <div class="ui-card span-6">
+        <div class="ui-label"><span>5.1 · Buttons</span><span class="id">BTN-001</span></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <button class="lb-btn">Log In</button>
+          <button class="lb-btn lb-btn--alt">Continue</button>
+          <button class="lb-btn lb-btn--ghost">Cancel</button>
+          <button class="lb-btn" disabled style="opacity:0.4;">Disabled</button>
+        </div>
+        <div style="margin-top: 16px; font-family: var(--font-spec); font-size: 10px; color: var(--ink-400); letter-spacing: 0.08em; line-height: 1.6;">
+          padding 16/32 · radius 8 · weight 500 · size 16 · family Neue Montreal
+        </div>
+      </div>
+
+      <div class="ui-card span-6">
+        <div class="ui-label"><span>5.2 · Inputs</span><span class="id">IN-001</span></div>
+        <div style="display: grid; gap: 16px;">
+          <div class="lb-input-group">
+            <label>Phone Number</label>
+            <div class="lb-input">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <input type="text" placeholder="+977 9843872870" value="+977 9843872870">
+            </div>
+          </div>
+          <div class="lb-input-group">
+            <label style="display:flex; justify-content:space-between;">Password <span style="color: var(--ink-300); font-size:12px;">Forgot?</span></label>
+            <div class="lb-input">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <input type="password" placeholder="Password" value="••••••••••">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-card span-4">
+        <div class="ui-label"><span>5.3 · Badges</span><span class="id">BDG-001</span></div>
+        <div style="display:flex; flex-direction:column; gap: 10px; align-items: flex-start;">
+          <span class="lb-badge lb-badge--ok">✓ Approved</span>
+          <span class="lb-badge lb-badge--warn">⏱ Pending</span>
+          <span class="lb-badge lb-badge--err">✕ Rejected</span>
+        </div>
+      </div>
+
+      <div class="ui-card span-8">
+        <div class="ui-label"><span>5.4 · Document Row</span><span class="id">DOC-001</span></div>
+        <div style="display: grid; gap: 8px;">
+          <div class="lb-doc-row">
+            <div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="2.5"/><path d="M8 16c1-2 3-3 4-3s3 1 4 3"/></svg></div>
+            <div class="meta"><div class="title">Passport</div><div class="sub">Uploaded on Feb 01</div></div>
+            <span class="lb-badge lb-badge--ok">✓ Approved</span>
+          </div>
+          <div class="lb-doc-row">
+            <div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></div>
+            <div class="meta"><div class="title">National ID</div><div class="sub">Uploaded on Feb 01</div></div>
+            <span class="lb-badge lb-badge--warn">⏱ Pending</span>
+          </div>
+          <div class="lb-doc-row">
+            <div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/></svg></div>
+            <div class="meta"><div class="title">Drivers License</div><div class="sub">Uploaded on Feb 01</div></div>
+            <span class="lb-badge lb-badge--err">✕ Rejected</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-card span-6">
+        <div class="ui-label"><span>5.5 · Stat Card</span><span class="id">STAT-001</span></div>
+        <div style="display: grid; gap: 12px; grid-template-columns: 1fr 1fr;">
+          <div class="lb-stat-card">
+            <div><div class="label">Total Documents</div><div class="num">5</div></div>
+            <div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="14" height="18" rx="2"/><path d="M8 7h6M8 11h6M8 15h4"/><rect x="15" y="15" width="5" height="5" rx="1" fill="currentColor" stroke="none" opacity=".5"/></svg></div>
+          </div>
+          <div class="lb-stat-card">
+            <div><div class="label">Shared with</div><div class="num" style="font-size:20px; margin-top:14px;">3 parties</div></div>
+            <div class="ico"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-card span-6">
+        <div class="ui-label"><span>5.6 · Language Dropdown</span><span class="id">DD-001</span></div>
+        <div style="display: flex; flex-direction:column; gap: 10px;">
+          <div style="display: flex; align-items:center; gap: 8px; color: var(--ink-400); font-family: var(--font-display); font-size:14px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            English
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div style="display: flex; align-items:center; gap: 8px; color: var(--ink-400); font-family: var(--font-display); font-size:14px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Nepali
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 06 — COLLATERAL -->
+  <section class="v1-section" id="collateral">
+    <div class="v1-section-head">
+      <div>
+        <div class="v1-section-num">§06<span class="slash">/</span>06 · In context</div>
+        <div style="margin-top:12px; font-family: var(--font-spec); font-size:11px; color:var(--ink-500); letter-spacing: 0.1em; text-transform: uppercase;">App icon · Product surface</div>
+      </div>
+      <div>
+        <h2 class="v1-section-title">In context.</h2>
+        <p class="v1-section-lead">Two reference builds. The icon on a home screen — mark only, white on ink. The dashboard — product applied end-to-end, showing color, type and component rules in combination.</p>
+      </div>
+    </div>
+
+    <div class="collateral-grid">
+      <div class="phone-frame">
+        <div class="iphone">
+          <div class="notch"></div>
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>●●● ▰▰</span></div>
+            <div class="apps">
+              <div class="app"><div class="ico lockbox"><img src="assets/favicon-dark.png" alt="LockBox"></div><div class="name">LockBox</div></div>
+              <div class="app"><div class="ico phone"></div><div class="name">Phone</div></div>
+              <div class="app"><div class="ico messages"></div><div class="name">Messages</div></div>
+              <div class="app"><div class="ico safari"></div><div class="name">Safari</div></div>
+              <div class="app"><div class="ico camera"></div><div class="name">Camera</div></div>
+              <div class="app"><div class="ico photos" style="background: conic-gradient(from 0deg, #FC0 0deg, #F0F 90deg, #0CF 180deg, #0F0 270deg, #FC0 360deg);"></div><div class="name">Photos</div></div>
+              <div class="app"><div class="ico maps"></div><div class="name">Maps</div></div>
+              <div class="app"><div class="ico settings"></div><div class="name">Settings</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-preview">
+        <div class="sb">
+          <div class="sb-logo"><img src="assets/favicon-dark.png" alt="LockBox"></div>
+          <div class="search">🔍 Search…</div>
+          <div class="item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</div>
+          <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload Documents</div>
+          <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>My Documents</div>
+          <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07"/></svg>Activity Log</div>
+          <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="10" fill="none"/></svg>Settings</div>
+        </div>
+        <div class="main">
+          <h3>Welcome Saugat</h3>
+          <div class="kpis">
+            <div class="kpi"><div><div class="lbl">Total Documents</div><div class="n">5</div></div><div class="box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/></svg></div></div>
+            <div class="kpi"><div><div class="lbl">Shared with</div><div class="n" style="font-size:14px; margin-top:6px;">e · ★ · ℳ</div></div><div class="box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3"/></svg></div></div>
+          </div>
+          <div class="recent">
+            <h4>Recent Documents</h4>
+            <div class="r-row"><div class="ri"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/></svg></div><div class="rm"><span class="t">Passport</span>Uploaded Feb 01</div><span class="rb ok">✓ Approved</span></div>
+            <div class="r-row"><div class="ri"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></div><div class="rm"><span class="t">National ID</span>Uploaded Feb 01</div><span class="rb pending">⏱ Pending</span></div>
+            <div class="r-row"><div class="ri"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/></svg></div><div class="rm"><span class="t">Drivers License</span>Uploaded Feb 01</div><span class="rb err">✕ Rejected</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="v1-foot">
+    <div>
+      <div class="big">LockBox<br>Brand v1.0</div>
+    </div>
+    <div>
+      <h6>Document</h6>
+      <p>LBX-BRAND-001<br>Issued 04.18.2026<br>Owner · Brand Systems</p>
+    </div>
+    <div>
+      <h6>Contents</h6>
+      <p><a href="#logo">§01 · Logo</a><br><a href="#color">§02 · Color</a><br><a href="#type">§03 · Typography</a><br><a href="#icons">§04 · Icons</a><br><a href="#ui">§05 · UI</a><br><a href="#collateral">§06 · In context</a></p>
+    </div>
+    <div>
+      <h6>End of document</h6>
+      <p>Questions, corrections or licensed use →<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2d0c0d3dcd6f2deddd1d9d0ddca9cdcc2">[email&#160;protected]</a></p>
+      <p style="margin-top: 16px; color: var(--ink-500);">— END —</p>
+    </div>
+  </footer>
+</main>
+
+<!-- ================= VERSION 2 — INSTITUTIONAL ================= -->
+<main class="version" id="v2">
+
+  <!-- COVER -->
+  <section class="v2-cover">
+    <div class="v2-cover-top">
+      <img src="assets/favicon-white.png" class="mark" alt="LockBox mark">
+      <div class="rule"></div>
+      <div>Brand Guidelines · v1.0 · 2026</div>
+    </div>
+    <div class="v2-cover-mid">
+      <div>
+        <div class="v2-eyebrow">LockBox · Identity Manual</div>
+        <h1>Trust,<br><em>by design.</em></h1>
+      </div>
+      <div>
+        <p class="intro">LockBox is the private vault behind every KYC form you'll ever fill in. This manual defines how the brand looks, speaks and behaves — and where it must never go.</p>
+      </div>
+    </div>
+    <div class="v2-cover-bot">
+      <div class="cell"><span class="k">Document</span>LBX-BRAND-MANUAL-01</div>
+      <div class="cell"><span class="k">Issued</span>April 18, 2026</div>
+      <div class="cell"><span class="k">Custodian</span>Brand Systems</div>
+      <div class="cell"><span class="k">Chapters</span>Identity · Color · Type · Icons · UI</div>
+    </div>
+  </section>
+
+  <!-- 01 IDENTITY -->
+  <section class="v2-chapter v2-chapter--light">
+    <div class="v2-chapter-head">
+      <div class="v2-chapter-num">01<span class="label">Chapter One</span></div>
+      <div>
+        <div class="v2-eyebrow">Identity</div>
+        <h2 class="v2-chapter-title">The mark is a vault.<br>The vault is the brand.</h2>
+        <p class="v2-chapter-lead">Our logo is a wordmark with a keyhole at its center — the letter O drawn as the opening of a safe. It is the single element that must remain untouchable. Everything else — colour, layout, voice — serves it.</p>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num">1.1</span>
+        <span class="v2-sub-title">Primary lockup</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-logo-hero"><img src="assets/logo-dark.png" alt="LockBox logo"></div>
+      <div class="v2-logo-duo">
+        <div>
+          <div class="box dark"><img src="assets/logo-white.png" alt="LockBox wordmark on ink"></div>
+          <div class="label">On Ink 800 · preferred</div>
+        </div>
+        <div>
+          <div class="box light"><img src="assets/logo-dark.png" alt="LockBox wordmark on paper"></div>
+          <div class="label">On Paper · documents</div>
+        </div>
+        <div>
+          <div class="box mono"><img src="assets/logo-dark.png" alt="LockBox wordmark mono"></div>
+          <div class="label">Mono · fax, embossing</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num">1.2</span>
+        <span class="v2-sub-title">The mark</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-mark-block">
+        <div class="v2-mark-display">
+          <img src="assets/favicon-dark.png" alt="LockBox mark">
+        </div>
+        <div class="v2-mark-text">
+          <h3>A keyhole, drawn from the <em>O.</em></h3>
+          <p>The mark lifts the O out of the wordmark and resolves it as a literal keyhole — circular chamber above, narrow shaft below. It stands alone in every surface too small for the wordmark.</p>
+          <div class="pull">"The mark is what you tap. The wordmark is what you read. They are never shown together at the same size."</div>
+          <p>Use the mark only at 32 px / 8 mm and above. Below that size, it reads as a dot.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num">1.3</span>
+        <span class="v2-sub-title">Clearspace &amp; minimum size</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-clear">
+        <div class="v2-clear-viz">
+          <div class="frame">
+            <span class="xmark tl">X</span>
+            <span class="xmark tr">X</span>
+            <span class="xmark bl">X</span>
+            <span class="xmark br">X</span>
+            <div class="inner"><img src="assets/logo-dark.png" alt="LockBox clearspace"></div>
+          </div>
+        </div>
+        <div class="v2-clear-rules">
+          <div>
+            <h4>Rules</h4>
+            <dl>
+              <div><dt>Clear space</dt><dd>= Height of the O (X)</dd></div>
+              <div><dt>Digital min</dt><dd>160 px wordmark · 32 px mark</dd></div>
+              <div><dt>Print min</dt><dd>24 mm wordmark · 8 mm mark</dd></div>
+              <div><dt>Co-branding</dt><dd>Divider = 1× clearspace</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num">1.4</span>
+        <span class="v2-sub-title">Do &amp; Don't</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-rules">
+        <div class="v2-rules-col do">
+          <h5><span class="tick">✓</span>Do</h5>
+          <div class="grid">
+            <div><img src="assets/logo-dark.png" alt=""><span class="cap">Use approved files only</span></div>
+            <div style="background:var(--ink-800);"><img src="assets/logo-white.png" alt=""><span class="cap" style="color:#DAE4F1;">Invert on dark</span></div>
+            <div><img src="assets/favicon-dark.png" alt="" style="width:40%;"><span class="cap">Mark below 160 px</span></div>
+            <div><img src="assets/logo-dark.png" alt=""><span class="cap">Respect clearspace</span></div>
+          </div>
+        </div>
+        <div class="v2-rules-col dont">
+          <h5><span class="tick">✕</span>Don't</h5>
+          <div class="grid">
+            <div class="stretched"><img src="assets/logo-dark.png" alt=""><span class="cap">Stretch or skew</span><span class="bad">✕</span></div>
+            <div class="rotated"><img src="assets/logo-dark.png" alt=""><span class="cap">Rotate the mark</span><span class="bad">✕</span></div>
+            <div class="colored"><img src="assets/logo-dark.png" alt=""><span class="cap" style="color:#fff;">Apply brand-foreign colour</span><span class="bad">✕</span></div>
+            <div class="busy"><img src="assets/logo-dark.png" alt=""><span class="cap" style="background:rgba(255,255,255,0.8); padding: 2px 6px;">Place on busy artwork</span><span class="bad">✕</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 COLOR -->
+  <section class="v2-chapter v2-chapter--dark">
+    <div class="v2-chapter-head">
+      <div class="v2-chapter-num" style="color:var(--white);">02<span class="label">Chapter Two</span></div>
+      <div>
+        <div class="v2-eyebrow" style="color:var(--ink-300);">Colour system</div>
+        <h2 class="v2-chapter-title">A single navy<br>holds the room.</h2>
+        <p class="v2-chapter-lead">Vault Navy is the brand. Everything else is support: quieter blues behind it, and three signal colours that only appear where the product must speak clearly — approved, pending, rejected.</p>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num" style="color:var(--ink-300);">2.1</span>
+        <span class="v2-sub-title">Primary palette</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-color-hero">
+        <div class="v2-swatch primary">
+          <span class="hero-label">Primary · 80% usage</span>
+          <span class="giant">Aa</span>
+          <div class="top">
+            <div class="name">Vault Navy</div>
+            <div class="code">Ink 800 · #0A1628</div>
+          </div>
+          <div class="bot" style="position:relative; z-index:1;">
+            <div><span class="lbl">HEX</span>#0A1628</div>
+            <div><span class="lbl">RGB</span>10 · 22 · 40</div>
+            <div><span class="lbl">CMYK</span>75 45 0 84</div>
+            <div><span class="lbl">PMS</span>5395 C</div>
+          </div>
+        </div>
+        <div class="v2-swatch sec1">
+          <div class="top">
+            <div class="name">Deep Teal</div>
+            <div class="code">Ink 600</div>
+          </div>
+          <div class="bot">
+            <div><span class="lbl">HEX</span>#1B3C53</div>
+            <div><span class="lbl">RGB</span>27 · 60 · 83</div>
+          </div>
+        </div>
+        <div class="v2-swatch sec2">
+          <div class="top">
+            <div class="name">Slate Blue</div>
+            <div class="code">Ink 400</div>
+          </div>
+          <div class="bot">
+            <div><span class="lbl">HEX</span>#456882</div>
+            <div><span class="lbl">RGB</span>69 · 104 · 130</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num" style="color:var(--ink-300);">2.2</span>
+        <span class="v2-sub-title">Tonal scale</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-scale">
+        <div style="background:#000C1F; color:#8996A9;"><div class="name">Ink 900</div><div class="hex">#000C1F</div></div>
+        <div style="background:#0A1628; color:#8996A9;"><div class="name">Ink 800</div><div class="hex">#0A1628</div></div>
+        <div style="background:#1B3C53; color:#DAE4F1;"><div class="name">Ink 600</div><div class="hex">#1B3C53</div></div>
+        <div style="background:#234C6A; color:#DAE4F1;"><div class="name">Ink 500</div><div class="hex">#234C6A</div></div>
+        <div style="background:#456882; color:#fff;"><div class="name">Ink 400</div><div class="hex">#456882</div></div>
+        <div style="background:#8996A9; color:#0A1628;"><div class="name">Ink 300</div><div class="hex">#8996A9</div></div>
+        <div style="background:#DAE4F1; color:#0A1628;"><div class="name">Ink 200</div><div class="hex">#DAE4F1</div></div>
+        <div style="background:#FAFAFA; color:#0A1628;"><div class="name">Paper</div><div class="hex">#FAFAFA</div></div>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num" style="color:var(--ink-300);">2.3</span>
+        <span class="v2-sub-title">Signal colours</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-status">
+        <div style="background:var(--ok); color:var(--white);">
+          <div class="icon-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><div class="label">Approved</div><div class="hex">#1C9139 · Success</div></div>
+        </div>
+        <div style="background:var(--warn); color:var(--ink-900);">
+          <div class="icon-badge" style="background:rgba(10,22,40,0.15);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="label">Pending</div><div class="hex">#FFF36E · Review</div></div>
+        </div>
+        <div style="background:var(--err); color:var(--white);">
+          <div class="icon-badge"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+          <div><div class="label">Rejected</div><div class="hex">#FF383C · Error</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num" style="color:var(--ink-300);">2.4</span>
+        <span class="v2-sub-title">Accessibility</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <table class="v2-contrast">
+        <thead><tr><th>Foreground</th><th>Background</th><th>Ratio</th><th>AA</th><th>AAA</th><th>Usage</th></tr></thead>
+        <tbody>
+          <tr><td><span class="sw" style="background:#fff;"></span>White</td><td><span class="sw" style="background:#0A1628;"></span>Ink 800</td><td class="ratio">17.4:1</td><td class="pass">● Pass</td><td class="pass">● Pass</td><td>Headlines, body</td></tr>
+          <tr><td><span class="sw" style="background:#DAE4F1;"></span>Ink 200</td><td><span class="sw" style="background:#0A1628;"></span>Ink 800</td><td class="ratio">14.1:1</td><td class="pass">● Pass</td><td class="pass">● Pass</td><td>Secondary text</td></tr>
+          <tr><td><span class="sw" style="background:#8996A9;"></span>Ink 300</td><td><span class="sw" style="background:#0A1628;"></span>Ink 800</td><td class="ratio">6.2:1</td><td class="pass">● Pass</td><td style="color:var(--warn);">◐ Large only</td><td>Captions</td></tr>
+          <tr><td><span class="sw" style="background:#0A1628;"></span>Ink 800</td><td><span class="sw" style="background:#fff;"></span>Paper</td><td class="ratio">17.4:1</td><td class="pass">● Pass</td><td class="pass">● Pass</td><td>Inverse surfaces</td></tr>
+          <tr><td><span class="sw" style="background:#456882;"></span>Ink 400</td><td><span class="sw" style="background:#fff;"></span>Paper</td><td class="ratio">4.8:1</td><td class="pass">● Pass</td><td class="fail">● Fail</td><td>Links</td></tr>
+          <tr><td><span class="sw" style="background:#1C9139;"></span>OK green</td><td><span class="sw" style="background:#fff;"></span>Paper</td><td class="ratio">4.5:1</td><td class="pass">● Pass</td><td class="fail">● Fail</td><td>Badges</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 03 TYPOGRAPHY -->
+  <section class="v2-chapter v2-chapter--light">
+    <div class="v2-chapter-head">
+      <div class="v2-chapter-num">03<span class="label">Chapter Three</span></div>
+      <div>
+        <div class="v2-eyebrow">Typography</div>
+        <h2 class="v2-chapter-title">Three typefaces,<br>quietly dressed.</h2>
+        <p class="v2-chapter-lead">Neue Montreal for display. Inter for body and interface. Geist Mono for labels and numerals. No decorative faces, no script, no third headline face. The system does the speaking.</p>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num">3.1</span>
+        <span class="v2-sub-title">Type specimens</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-type-spec">
+        <div class="v2-type-card display">
+          <div class="meta"><span>Neue Montreal</span><span class="fam">Display</span></div>
+          <div class="specimen">Aa</div>
+          <div>
+            <div style="font-family:'Manrope'; font-weight:500; font-size:16px; color:var(--ink-800); margin-bottom: 8px;">The quick brown fox jumps over the lazy dog.</div>
+            <div style="font-family:'Manrope'; font-weight:700; font-size:16px; color:var(--ink-800);">0123456789 !@#$%&amp;*</div>
+          </div>
+          <div class="glyphs">
+            <span>400</span><span>500</span><span>600</span><span>700</span><span>800</span><span>—</span><span>—</span><span>—</span>
+          </div>
+        </div>
+        <div class="v2-type-card body">
+          <div class="meta"><span>Inter</span><span class="fam">Body</span></div>
+          <div class="specimen">Aa</div>
+          <div>
+            <div style="font-family:'Inter'; font-weight:400; font-size:16px; color:var(--ink-800); margin-bottom: 8px;">The quick brown fox jumps over the lazy dog.</div>
+            <div style="font-family:'Inter'; font-weight:600; font-size:16px; color:var(--ink-800);">0123456789 !@#$%&amp;*</div>
+          </div>
+          <div class="glyphs">
+            <span>400</span><span>500</span><span>600</span><span>700</span><span>—</span><span>—</span><span>—</span><span>—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num">3.2</span>
+        <span class="v2-sub-title">Type scale</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-type-scale">
+        <div class="row"><div class="num">i</div><div class="sample v2-s-display">Lock everything.</div><div class="spec"><div><span class="k">Family</span>Neue Montreal</div><div><span class="k">Weight</span>800 XBold</div><div><span class="k">Size</span>64 / 60 px</div></div></div>
+        <div class="row"><div class="num">ii</div><div class="sample v2-s-h1">Document, once.</div><div class="spec"><div><span class="k">Family</span>Neue Montreal</div><div><span class="k">Weight</span>700 Bold</div><div><span class="k">Size</span>44 / 48 px</div></div></div>
+        <div class="row"><div class="num">iii</div><div class="sample v2-s-h2">Share, safely.</div><div class="spec"><div><span class="k">Family</span>Neue Montreal</div><div><span class="k">Weight</span>600</div><div><span class="k">Size</span>30 / 36 px</div></div></div>
+        <div class="row"><div class="num">iv</div><div class="sample v2-s-h3">Passport — Feb 01</div><div class="spec"><div><span class="k">Family</span>Neue Montreal</div><div><span class="k">Weight</span>600</div><div><span class="k">Size</span>20 / 28 px</div></div></div>
+        <div class="row"><div class="num">v</div><div class="sample v2-s-body" style="max-width:520px; white-space: normal; line-height:1.5;">Fill your KYC once. Share it masked — or whole — only when you say so.</div><div class="spec"><div><span class="k">Family</span>Inter</div><div><span class="k">Weight</span>400 / 500</div><div><span class="k">Size</span>16 / 24 px</div></div></div>
+        <div class="row"><div class="num">vi</div><div class="sample v2-s-mono">LBX-2026 · VERIFIED</div><div class="spec"><div><span class="k">Family</span>Geist Mono</div><div><span class="k">Weight</span>500</div><div><span class="k">Size</span>12 / 16 px</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ICONS -->
+  <section class="v2-chapter v2-chapter--dark">
+    <div class="v2-chapter-head">
+      <div class="v2-chapter-num" style="color:var(--white);">04<span class="label">Chapter Four</span></div>
+      <div>
+        <div class="v2-eyebrow" style="color:var(--ink-300);">Iconography</div>
+        <h2 class="v2-chapter-title">Outlined, even,<br>always inherited.</h2>
+        <p class="v2-chapter-lead">Icons are drawn on a 24×24 grid with a 1.5 px stroke. They are monochrome and take their colour from the text they sit beside. Nothing filled, nothing coloured on its own.</p>
+      </div>
+    </div>
+
+    <div class="v2-icon-hero">
+      <div class="v2-icon-construct">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div class="v2-icon-text">
+        <h3>A padlock, <em>on a grid.</em></h3>
+        <p>Every icon is built on the same 24×24 matrix with 2 px of optical padding, round caps and round joins. Shapes stay open — a lock is a lock, not a filled lozenge.</p>
+        <dl>
+          <div><dt>Grid</dt><dd>24 × 24 px</dd></div>
+          <div><dt>Stroke</dt><dd>1.5 px · round</dd></div>
+          <div><dt>Colour</dt><dd>currentColor</dd></div>
+          <div><dt>Export</dt><dd>SVG · no fill</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="v2-icon-lib">
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="nm">Lock</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg><span class="nm">Eye</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg><span class="nm">Eye-off</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><span class="nm">Upload</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span class="nm">Document</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07"/></svg><span class="nm">Share</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="nm">Globe</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nm">Phone</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="nm">Search</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span class="nm">Dashboard</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span class="nm">Check</span></div>
+      <div class="cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="nm">Clock</span></div>
+    </div>
+  </section>
+
+  <!-- 05 UI -->
+  <section class="v2-chapter v2-chapter--light">
+    <div class="v2-chapter-head">
+      <div class="v2-chapter-num">05<span class="label">Chapter Five</span></div>
+      <div>
+        <div class="v2-eyebrow">Interface</div>
+        <h2 class="v2-chapter-title">One primary button.<br>One kind of lock.</h2>
+        <p class="v2-chapter-lead">The product surface is a single concentrated composition: the vault sidebar, the deep navy canvas, and a small set of primitives that repeat. We commit to one primary button, one input style, one badge shape.</p>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num">5.1</span>
+        <span class="v2-sub-title">In context — Dashboard</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-ui-showcase">
+        <div class="v2-ui-browser">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="url">🔒 app.lockbox.np / dashboard</div>
+        </div>
+        <div class="v2-ui-showcase-body">
+          <div class="v2-ui-sidebar">
+            <div class="logo"><img src="assets/favicon-dark.png" alt="LockBox"></div>
+            <div class="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search…</div>
+            <div class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</div>
+            <div class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Upload Documents</div>
+            <div class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>My Documents</div>
+            <div class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07"/></svg>Activity Log</div>
+            <div class="nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/></svg>Settings</div>
+            <div class="spacer"></div>
+            <div class="user">
+              <div class="ava"></div>
+              <div class="info"><div class="n">Saugat Ojha</div><div class="p">977 98438-72870</div></div>
+            </div>
+          </div>
+          <div class="v2-ui-main">
+            <h3>Welcome, Saugat</h3>
+            <div class="v2-ui-stats">
+              <div class="v2-ui-stat">
+                <div><div class="lbl">Total Documents</div><div class="val">5</div></div>
+                <div class="box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/></svg></div>
+              </div>
+              <div class="v2-ui-stat">
+                <div><div class="lbl">Shared with</div><div class="chip"><div>e</div><div>★</div><div>ℳ</div></div></div>
+                <div class="box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 0 0 7.54.54"/><path d="M14 11a5 5 0 0 0-7.54-.54"/></svg></div>
+              </div>
+            </div>
+            <div class="v2-ui-recent">
+              <h4>Recent Documents</h4>
+              <div class="r"><div class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="3" width="16" height="18" rx="2"/></svg></div><div class="info"><span class="t">Passport</span><span class="s">Uploaded on Feb 01</span></div><span class="b ok">✓ Approved</span></div>
+              <div class="r"><div class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></div><div class="info"><span class="t">National ID</span><span class="s">Uploaded on Feb 01</span></div><span class="b pending">⏱ Pending</span></div>
+              <div class="r"><div class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/></svg></div><div class="info"><span class="t">Drivers License</span><span class="s">Uploaded on Feb 01</span></div><span class="b err">✕ Rejected</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v2-sub">
+      <div class="v2-sub-head">
+        <span class="v2-sub-num">5.2</span>
+        <span class="v2-sub-title">Primitives</span>
+        <span class="v2-sub-rule"></span>
+      </div>
+      <div class="v2-prim">
+        <div class="v2-prim-card">
+          <div class="hd"><span class="t">Buttons</span><span class="n">i.</span></div>
+          <div class="v2-btn-row">
+            <button class="v2-btn">Log In</button>
+            <button class="v2-btn v2-btn--alt">Secondary</button>
+            <button class="v2-btn v2-btn--ghost">Cancel</button>
+          </div>
+          <div class="dm">pad 14/28 · radius 8 · Manrope 500 / 15 px</div>
+        </div>
+        <div class="v2-prim-card">
+          <div class="hd"><span class="t">Inputs</span><span class="n">ii.</span></div>
+          <div class="v2-inp-row">
+            <div class="v2-inp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6"/></svg>+977 9843 872 870</div>
+            <div class="v2-inp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>••••••••••</div>
+          </div>
+          <div class="dm">border 1 · radius 8 · Inter 400 / 14 px</div>
+        </div>
+        <div class="v2-prim-card">
+          <div class="hd"><span class="t">Badges</span><span class="n">iii.</span></div>
+          <div class="v2-badges-row">
+            <span class="v2-bdg ok">✓ Approved</span>
+            <span class="v2-bdg pending">⏱ Pending</span>
+            <span class="v2-bdg err">✕ Rejected</span>
+          </div>
+          <div class="dm">pad 4/12 · radius 999 · weight 500</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="v2-outro">
+    <div class="v2-outro-grid">
+      <div>
+        <div class="quote">"A vault earns its silence. <em>We hold documents, not attention.</em>"</div>
+        <div class="quote-attr">— LockBox Brand Principles · Article I</div>
+      </div>
+      <div class="meta">
+        <h6>Document</h6>
+        LBX-BRAND-MANUAL-01<br>Revision 1.0<br>Issued 04.18.2026
+      </div>
+      <div class="end">
+        <div class="logo"><img src="assets/logo-white.png" alt="LockBox"></div>
+        <div class="mk">— End of manual —</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script>
+  document.querySelectorAll('.version-bar button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.v;
+      document.querySelectorAll('.version-bar button').forEach(b => b.classList.toggle('active', b === btn));
+      document.querySelectorAll('.version').forEach(sec => sec.classList.toggle('active', sec.id === v));
+      localStorage.setItem('lbx-version', v);
+      window.scrollTo(0, 0);
+    });
+  });
+  const saved = localStorage.getItem('lbx-version');
+  if (saved) document.querySelector(`.version-bar button[data-v="${saved}"]`)?.click();
+</script>
+
+</body>
+</html>

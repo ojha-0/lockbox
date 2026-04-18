@@ -5,7 +5,8 @@ import LockboxLogo from '../common/LockboxLogo';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 
-const SIDEBAR_BG = { backgroundColor: '#0e1826' };
+// Vault Navy — primary brand surface
+const SIDEBAR_BG = { backgroundColor: '#0A1628' };
 
 const navItems = [
   { to: '/admin', icon: LayoutDashboard, label: 'Dashboard', end: true },
