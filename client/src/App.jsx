@@ -25,10 +25,17 @@ import DocumentQueuePage from './pages/admin/DocumentQueuePage';
 import DocumentReviewPage from './pages/admin/DocumentReviewPage';
 import VerificationQueuePage from './pages/admin/VerificationQueuePage';
 import AdminActivityLogPage from './pages/admin/AdminActivityLogPage';
+import OrganizationsPage from './pages/admin/OrganizationsPage';
+
+// Organization portal
+import OrganizationLayout from './components/layout/OrganizationLayout';
+import OrgDashboardPage from './pages/org/OrgDashboardPage';
+import OrgApiKeyPage from './pages/org/OrgApiKeyPage';
 
 // Guards
 import ProtectedRoute from './components/common/ProtectedRoute';
 import AdminRoute from './components/common/AdminRoute';
+import OrganizationRoute from './components/common/OrganizationRoute';
 
 export default function App() {
   return (
@@ -63,6 +70,15 @@ export default function App() {
               <Route path="/admin/documents" element={<DocumentQueuePage />} />
               <Route path="/admin/documents/:id" element={<DocumentReviewPage />} />
               <Route path="/admin/activity" element={<AdminActivityLogPage />} />
+              <Route path="/admin/organizations" element={<OrganizationsPage />} />
+            </Route>
+          </Route>
+
+          {/* Organization portal */}
+          <Route element={<OrganizationRoute />}>
+            <Route element={<OrganizationLayout />}>
+              <Route path="/org" element={<OrgDashboardPage />} />
+              <Route path="/org/api-key" element={<OrgApiKeyPage />} />
             </Route>
           </Route>
 

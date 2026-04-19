@@ -13,6 +13,7 @@ export default function AdminRoute() {
   }
 
   if (!user) return <Navigate to="/login" replace />;
+  if (user.role === 'ORGANIZATION') return <Navigate to="/org" replace />;
   if (user.role !== 'ADMIN') return <Navigate to="/dashboard" replace />;
   return <Outlet />;
 }

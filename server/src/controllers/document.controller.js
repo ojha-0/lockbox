@@ -109,6 +109,16 @@ const deleteDocument = async (req, res, next) => {
 
     await prisma.document.delete({ where: { id: document.id } });
 
+    // If this was the photo currently promoted to the user's avatar, clear it
+    // so we don't leave a dangling URL pointing at a deleted file.
+    const avatarUrl = `/uploads/${document.fileName}`;
+    if (req.user.profilePicture === avatarUrl) {
+      await prisma.user.update({
+        where: { id: req.user.id },
+        data: { profilePicture: null },
+      });
+    }
+
     await logActivity({
       actorUserId: req.user.id,
       targetUserId: req.user.id,

@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
-export default function ProtectedRoute() {
+export default function OrganizationRoute() {
   const { user, loading } = useAuth();
 
   if (loading) {
@@ -14,6 +14,6 @@ export default function ProtectedRoute() {
 
   if (!user) return <Navigate to="/login" replace />;
   if (user.role === 'ADMIN') return <Navigate to="/admin" replace />;
-  if (user.role === 'ORGANIZATION') return <Navigate to="/org" replace />;
+  if (user.role !== 'ORGANIZATION') return <Navigate to="/dashboard" replace />;
   return <Outlet />;
 }

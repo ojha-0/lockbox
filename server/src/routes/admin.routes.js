@@ -17,6 +17,13 @@ const {
   declinePersonalDetails,
   getVerificationQueue,
 } = require('../controllers/admin.controller');
+const {
+  adminCreateOrganization,
+  adminListOrganizations,
+  adminRotateOrgApiKey,
+  adminDeleteOrganization,
+} = require('../controllers/organization.controller');
+const { uploadOrgLogo } = require('../middleware/orgLogoUpload.middleware');
 
 router.use(authenticate, requireRole('ADMIN'));
 
@@ -29,6 +36,11 @@ router.get('/users/:id', getUserById);
 router.patch('/users/:id/status', updateUserStatus);
 router.patch('/users/:id/personal-details/verify', verifyPersonalDetails);
 router.patch('/users/:id/personal-details/decline', declinePersonalDetails);
+
+router.get('/organizations', adminListOrganizations);
+router.post('/organizations', uploadOrgLogo.single('logo'), adminCreateOrganization);
+router.post('/organizations/:id/rotate-key', adminRotateOrgApiKey);
+router.delete('/organizations/:id', adminDeleteOrganization);
 
 router.get('/documents', getDocuments);
 router.get('/documents/:id', getDocumentById);

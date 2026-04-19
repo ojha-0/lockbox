@@ -1,13 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  User, MapPin, Shield, BookOpen, CreditCard, Car, Receipt,
+  User, MapPin, Shield, BookOpen, CreditCard, Car, Receipt, Camera,
   Upload, X, CheckCircle, Loader2, Clock, AlertCircle, RotateCcw, Sparkles,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import api from '../../api/client';
 import { useAuth } from '../../context/AuthContext';
 import LockboxLogo from '../../components/common/LockboxLogo';
+import PhotoCaptureModal from '../../components/common/PhotoCaptureModal';
 import { formatFileSize } from '../../utils/format';
 import { loadForm, saveForm } from '../../utils/formStorage';
 import { adToBs, bsToAd } from '../../utils/nepaliDate';
@@ -205,6 +206,7 @@ function SectionCard({ icon: Icon, title, children }) {
 const ACCEPTED = '.pdf,.doc,.docx,.jpg,.jpeg,.png,.webp';
 
 const DOC_SLOTS = [
+  { id: 'user_photo',        label: 'Your Photo', camera: true, cameraOnly: true, imageOnly: true, required: true },
   { id: 'passport',          label: 'Passport' },
   { id: 'national_id',       label: 'National ID' },
   { id: 'citizenship_front', label: 'Citizenship — Front' },
@@ -214,6 +216,7 @@ const DOC_SLOTS = [
 ];
 
 const SLOT_DOCTYPE = {
+  user_photo:        'user_photo',
   passport:          'passport',
   national_id:       'national_id',
   citizenship_front: 'citizenship',
@@ -222,7 +225,7 @@ const SLOT_DOCTYPE = {
   pan_card:          'pan_card',
 };
 
-function FileSlot({ slotId, label, file, uploaded, serverStatus, ocrBusy, onSelect, onRemove }) {
+function FileSlot({ slotId, label, file, uploaded, serverStatus, ocrBusy, camera, cameraOnly, required, onSelect, onCapture, onRemove }) {
   // Just-uploaded in this session
   if (uploaded) {
     return (
@@ -289,7 +292,9 @@ function FileSlot({ slotId, label, file, uploaded, serverStatus, ocrBusy, onSele
   return (
     <div className="flex items-center gap-3 p-3 border-2 border-dashed border-gray-200 rounded-lg hover:border-gray-300 transition-colors">
       <div className="w-8 h-8 rounded bg-gray-100 flex items-center justify-center flex-shrink-0">
-        <Upload size={13} className="text-gray-400" />
+        {camera
+          ? <Camera size={13} className="text-gray-400" />
+          : <Upload size={13} className="text-gray-400" />}
       </div>
       <div className="flex-1 min-w-0">
         {file ? (
@@ -307,8 +312,17 @@ function FileSlot({ slotId, label, file, uploaded, serverStatus, ocrBusy, onSele
           </>
         ) : (
           <>
-            <p className="text-xs font-medium text-gray-600">{label}</p>
-            <p className="text-xs text-gray-400">PDF, JPG, PNG — max 10 MB</p>
+            <p className="text-xs font-medium text-gray-600">
+              {label}
+              {required && <span className="ml-1 text-red-500">*</span>}
+            </p>
+            <p className="text-xs text-gray-400">
+              {cameraOnly
+                ? 'Live camera capture with liveness check — no uploads'
+                : camera
+                  ? 'JPG or PNG — take a photo or upload'
+                  : 'PDF, JPG, PNG — max 10 MB'}
+            </p>
           </>
         )}
       </div>
@@ -317,13 +331,31 @@ function FileSlot({ slotId, label, file, uploaded, serverStatus, ocrBusy, onSele
           <X size={15} />
         </button>
       ) : (
-        <button
-          type="button"
-          onClick={() => onSelect(slotId)}
-          className="px-3 py-1 text-xs font-semibold bg-gray-900 text-white rounded-lg hover:bg-black transition-colors flex-shrink-0"
-        >
-          Browse
-        </button>
+        <div className="flex items-center gap-1.5 flex-shrink-0">
+          {camera && (
+            <button
+              type="button"
+              onClick={() => onCapture(slotId)}
+              className="px-3 py-1 text-xs font-semibold bg-gray-900 text-white rounded-lg hover:bg-black transition-colors inline-flex items-center gap-1"
+            >
+              <Camera size={12} />
+              Take Photo
+            </button>
+          )}
+          {!cameraOnly && (
+            <button
+              type="button"
+              onClick={() => onSelect(slotId)}
+              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-colors ${
+                camera
+                  ? 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
+                  : 'bg-gray-900 text-white hover:bg-black'
+              }`}
+            >
+              {camera ? 'Upload' : 'Browse'}
+            </button>
+          )}
+        </div>
       )}
     </div>
   );
@@ -346,6 +378,7 @@ export default function UploadDocumentPage() {
   const [activeSlot, setActiveSlot] = useState(null);
   const [uploading, setUploading] = useState(false);
   const [ocrBusy, setOcrBusy]     = useState({});     // slotId -> bool (during upload)
+  const [cameraSlot, setCameraSlot] = useState(null); // slotId currently using camera modal
 
   const set = (key, value) => setForm(prev => ({ ...prev, [key]: value }));
 
@@ -466,14 +499,33 @@ export default function UploadDocumentPage() {
   // ── File handling ──
   const handleSelectFile = (slotId) => {
     setActiveSlot(slotId);
-    if (fileRef.current) { fileRef.current.value = ''; fileRef.current.click(); }
+    if (fileRef.current) {
+      fileRef.current.value = '';
+      const slot = DOC_SLOTS.find(s => s.id === slotId);
+      fileRef.current.accept = slot?.imageOnly ? 'image/*' : ACCEPTED;
+      fileRef.current.click();
+    }
   };
 
   const handleFileChange = (e) => {
     const f = e.target.files[0];
     if (!f) return;
     if (f.size > 10 * 1024 * 1024) { toast.error('File must be under 10 MB'); return; }
+    const slot = DOC_SLOTS.find(s => s.id === activeSlot);
+    if (slot?.imageOnly && !f.type.startsWith('image/')) {
+      toast.error('Please select an image file');
+      return;
+    }
     setFiles(prev => ({ ...prev, [activeSlot]: f }));
+  };
+
+  // Camera-capture flow: open webcam modal, then drop the resulting File into
+  // the same `files` map used by the regular upload button.
+  const handleOpenCamera  = (slotId) => setCameraSlot(slotId);
+  const handleCloseCamera = () => setCameraSlot(null);
+  const handlePhotoCaptured = (file) => {
+    if (!cameraSlot) return;
+    setFiles(prev => ({ ...prev, [cameraSlot]: file }));
   };
 
   const removeFile = (slotId) =>
@@ -499,9 +551,18 @@ export default function UploadDocumentPage() {
     return filled;
   };
 
+  // Treat the photo as satisfied if it already exists on the server (any status)
+  // or if the user has a freshly-selected file waiting to go up.
+  const photoProvided =
+    !!files.user_photo || !!uploaded.user_photo || !!serverDocs.user_photo;
+
   const handleUploadAll = async () => {
     const pending = DOC_SLOTS.filter(s => files[s.id] && !uploaded[s.id]);
     if (!pending.length) { toast.error('No files selected to upload'); return; }
+    if (!photoProvided) {
+      toast.error('Please take or upload your photo before submitting');
+      return;
+    }
     saveData(form);
     try { await persistToServer(); } catch { /* non-fatal — upload still proceeds */ }
     setUploading(true);
@@ -556,13 +617,23 @@ export default function UploadDocumentPage() {
 
       <input ref={fileRef} type="file" accept={ACCEPTED} className="hidden" onChange={handleFileChange} />
 
+      <PhotoCaptureModal
+        open={!!cameraSlot}
+        onClose={handleCloseCamera}
+        onCapture={handlePhotoCaptured}
+      />
+
       {/* ── OCR info banner ── */}
       <div className="flex items-start gap-3 p-3 rounded-lg bg-blue-50 border border-blue-100 text-blue-800">
         <Sparkles size={15} className="flex-shrink-0 mt-0.5" />
         <p className="text-xs leading-relaxed">
-          Pick a file, then click <b>Upload</b>. After upload we'll scan any photo
-          documents and auto-fill the fields below — always review and retype any
-          wrong values before clicking <b>Save Information</b>.
+          A live photo of yourself is required alongside your documents. Use
+          <b> Take Photo</b> to capture one with your camera — position your
+          face inside the oval and hold still for a moment while we confirm
+          the face. Uploaded images aren't accepted for this field. After
+          upload we'll scan any photo documents and auto-fill the fields below
+          — always review and retype any wrong values before clicking
+          <b> Save Information</b>.
         </p>
       </div>
 
@@ -582,7 +653,11 @@ export default function UploadDocumentPage() {
               uploaded={!!uploaded[slot.id]}
               serverStatus={serverDocs[slot.id]?.status}
               ocrBusy={!!ocrBusy[slot.id]}
+              camera={!!slot.camera}
+              cameraOnly={!!slot.cameraOnly}
+              required={!!slot.required}
               onSelect={handleSelectFile}
+              onCapture={handleOpenCamera}
               onRemove={removeFile}
             />
           ))}

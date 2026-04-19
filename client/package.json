@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vladmandic/face-api": "^1.7.15",
     "axios": "^1.6.7",
     "lucide-react": "^0.356.0",
     "nepali-date-converter": "^3.4.0",

@@ -321,6 +321,15 @@ const approveDocument = async (req, res, next) => {
       include: { user: { select: USER_LIST_SELECT } },
     });
 
+    // Approving a user_photo promotes it to the user's profile picture so it
+    // shows up in the sidebar avatar and anywhere else the user's photo is used.
+    if (document.documentType === 'user_photo' && document.mimeType?.startsWith('image/')) {
+      await prisma.user.update({
+        where: { id: document.userId },
+        data: { profilePicture: `/uploads/${document.fileName}` },
+      });
+    }
+
     await logActivity({
       actorUserId: req.user.id,
       targetUserId: document.userId,
@@ -372,6 +381,16 @@ const declineDocument = async (req, res, next) => {
       },
       include: { user: { select: USER_LIST_SELECT } },
     });
+
+    // If a previously-approved user_photo is being reversed, drop it from the
+    // user's avatar so they're not still showing a rejected image.
+    if (document.documentType === 'user_photo') {
+      const avatarUrl = `/uploads/${document.fileName}`;
+      await prisma.user.updateMany({
+        where: { id: document.userId, profilePicture: avatarUrl },
+        data: { profilePicture: null },
+      });
+    }
 
     await logActivity({
       actorUserId: req.user.id,

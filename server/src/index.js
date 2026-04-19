@@ -13,6 +13,9 @@ const activityRoutes = require('./routes/activity.routes');
 const dashboardRoutes = require('./routes/dashboard.routes');
 const shareRoutes = require('./routes/share.routes');
 const userRoutes = require('./routes/user.routes');
+const kycRoutes = require('./routes/kyc.routes');
+const organizationRoutes = require('./routes/organization.routes');
+const verifyRoutes = require('./routes/verify.routes');
 const { errorHandler } = require('./middleware/error.middleware');
 
 const app = express();
@@ -20,10 +23,18 @@ const PORT = process.env.PORT || 5000;
 
 // Security middleware
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
-app.use(cors({
+// The main app (LockBox client) uses cookies/credentials, so its origin must
+// be explicit. The public verify API uses X-API-Key (no cookies) and is meant
+// to be callable from anywhere — skip the credentialed CORS for that path so
+// its route-level `cors({ origin: '*' })` can respond to the preflight.
+const credentialedCors = cors({
   origin: process.env.CLIENT_URL || 'http://localhost:5173',
   credentials: true,
-}));
+});
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api/v1/verify')) return next();
+  return credentialedCors(req, res, next);
+});
 
 // Rate limiting
 const limiter = rateLimit({
@@ -55,6 +66,9 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/activity-logs', activityRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/shares', shareRoutes);
+app.use('/api/v1/kyc', kycRoutes);
+app.use('/api/organization', organizationRoutes);
+app.use('/api/v1/verify', verifyRoutes);
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
 

@@ -10,6 +10,7 @@ datasource db {
 enum Role {
   USER
   ADMIN
+  ORGANIZATION
 }
 
 enum ProfileStatus {
@@ -23,6 +24,13 @@ enum VerificationStatus {
   DECLINED
 }
 
+enum ConsentStatus {
+  PENDING
+  APPROVED
+  DENIED
+  REVOKED
+}
+
 model User {
   id             String        @id @default(cuid())
   firstName      String
@@ -33,6 +41,10 @@ model User {
   role           Role          @default(USER)
   profileStatus  ProfileStatus @default(ACTIVE)
   profilePicture String?
+  // ORGANIZATION accounts: plaintext API key shown in their dashboard so they
+  // can paste it into their own systems. Null for USER/ADMIN accounts.
+  apiKey         String?       @unique
+  apiKeyIssuedAt DateTime?
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @updatedAt
   lastLoginAt    DateTime?
@@ -47,6 +59,9 @@ model User {
   sharesReceived DocumentShare[] @relation("SharesReceived")
   personalDetails UserPersonalDetails?
   verifiedPersonalDetails UserPersonalDetails[] @relation("PersonalDetailsVerifier")
+  consentRequests ConsentRequest[]
+  orgVerificationsIssued OrgVerification[] @relation("OrgVerificationIssuer")
+  orgVerificationsAbout  OrgVerification[] @relation("OrgVerificationSubject")
 }
 
 model UserPersonalDetails {
@@ -151,6 +166,52 @@ model DocumentShare {
 
   fromUser User @relation("SharesSent", fields: [fromUserId], references: [id], onDelete: Cascade)
   toUser   User @relation("SharesReceived", fields: [toUserId], references: [id], onDelete: Cascade)
+}
+
+model ThirdParty {
+  id           String   @id @default(cuid())
+  name         String
+  clientId     String   @unique
+  clientSecret String
+  webhookUrl   String?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+
+  consentRequests ConsentRequest[]
+}
+
+model ConsentRequest {
+  id             String        @id @default(cuid())
+  thirdPartyId   String
+  userId         String
+  scope          String[]
+  status         ConsentStatus @default(PENDING)
+  consentToken   String        @unique
+  expiresAt      DateTime
+  accessToken    String?       @unique
+  accessExpiry   DateTime?
+  createdAt      DateTime      @default(now())
+
+  thirdParty ThirdParty @relation(fields: [thirdPartyId], references: [id], onDelete: Cascade)
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Audit trail for the public verification API: every lookup an organization
+// makes against our /api/v1/verify endpoint is logged here so the
+// organization's dashboard can display it.
+model OrgVerification {
+  id            String   @id @default(cuid())
+  orgUserId     String
+  subjectUserId String?
+  queriedName   String
+  queriedPhone  String
+  verified      Boolean
+  createdAt     DateTime @default(now())
+
+  org         User  @relation("OrgVerificationIssuer", fields: [orgUserId], references: [id], onDelete: Cascade)
+  subjectUser User? @relation("OrgVerificationSubject", fields: [subjectUserId], references: [id], onDelete: SetNull)
+
+  @@index([orgUserId, createdAt])
 }
 
 model PasswordReset {
