@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 import api from '../../api/client';
 import LockboxLogo from '../../components/common/LockboxLogo';
 
-// Vault Navy — flat brand surface
+// dark blue color for auth pages, matching the one in Figma: #0A1628
 const AUTH_BG = { backgroundColor: '#0A1628' };
 
 export default function ForgotPasswordPage() {
